@@ -50,6 +50,7 @@
     background-image: url('../images/promotion-bg.jpg');
     background-repeat: no-repeat;
     background-position: center;
+
     &__title {}
 
     &__subtitle {
@@ -81,6 +82,39 @@
 
 
 // PROMOTION
+
+
+
+// FOOTER
+
+.footer {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 60px;
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        font-family: "SF-Pro", sans-serif;
+        display: inherit;
+        font-weight: 600;
+        font-size: 18px;
+    }
+    &__item + &__item{
+        margin-left: 60px;
+    }
+    &__link {
+        margin-left: 43px;
+        font-weight: 300;
+    }
+}
+
+
+// FOOTER
+
 
 
 //-----------------------------------------------------------------------------------------------------------
