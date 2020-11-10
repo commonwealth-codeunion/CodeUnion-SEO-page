@@ -83,7 +83,19 @@
 
 // PROMOTION
 
+// WHY
 
+.why{
+    &__title{
+        max-width: 576px;
+        margin-bottom: 44px;
+    }
+    &__paragraph{
+        width: 480px;
+    }
+}
+
+// WHY
 
 // FOOTER
 
