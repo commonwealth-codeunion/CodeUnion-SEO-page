@@ -21,6 +21,7 @@
     &__wrapper {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
     &__nav {
@@ -85,17 +86,102 @@
 
 // WHY
 
-.why{
-    &__title{
+.why {
+    &__title {
         max-width: 576px;
         margin-bottom: 44px;
     }
-    &__paragraph{
+
+    &__paragraph {
         width: 480px;
     }
 }
 
 // WHY
+
+// SERVICES
+
+.services {
+    background-image: url('../images/services-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right center;
+
+    &__title {
+        margin-bottom: 57px;
+    }
+
+    &__subtitle {
+        margin-bottom: 40px;
+
+        span {
+            padding-top: 2px;
+            display: block;
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 1.2;
+        }
+    }
+
+    &__list {
+        font-family: "SF-Pro";
+
+    }
+
+    &__list-item {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 153.34%;
+        list-style-type: disc;
+        padding-left: 15px;
+        position: relative;
+
+        &::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0%;
+        }
+    }
+
+    .swiper-container {
+        margin-left: 0;
+        width: 623px;
+        margin-bottom: 25px;
+    }
+
+    .swiper-wrapper {
+        align-items: center;
+    }
+
+    .swiper-nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: 55%;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        content: "";
+    }
+
+    .swiper-nav-items {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 114px;
+    }
+    &__button{
+        padding: 11px 88px;
+    }
+}
+
+
+
+// SERVICES
 
 // FOOTER
 
@@ -115,9 +201,11 @@
         font-weight: 600;
         font-size: 18px;
     }
-    &__item + &__item{
+
+    &__item+&__item {
         margin-left: 60px;
     }
+
     &__link {
         margin-left: 43px;
         font-weight: 300;
