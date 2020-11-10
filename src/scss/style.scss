@@ -7,6 +7,102 @@
 //                                                    START CODE
 //
 //-----------------------------------------------------------------------------------------------------------
+// POPUP
+.overflow {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #000;
+    z-index: 80;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+    &.active {
+        opacity: .8;
+        visibility: visible;
+    }
+}
+
+.popup {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px 95px 90px;
+    z-index: 99;
+    background-color: #000;
+    max-width: 733px;
+    transition: all .3s;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+
+    }
+
+    &__close {
+        top: 27px;
+        right: 36px;
+        position: absolute;
+        background: transparent;
+        border: none;
+    }
+
+    &__title {
+        margin-bottom: 40px;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 128%;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+
+        &__input {
+            padding: 16px 22px;
+            margin-bottom: 42px;
+            background-color: transparent;
+            border: 1px solid #FFF;
+            color: #fff;
+            font-size: 24px;
+            line-height: 128%;
+            &:focus::placeholder{
+                color: transparent;
+            }
+            &::placeholder {
+                color: #fff;
+
+            }
+
+        }
+
+        &__send {
+            padding: 16px 210px;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 28px;
+            letter-spacing: 0.015em;
+            background-color: #fff;
+            border: none;
+            transition: transform .3s;
+            &:hover {
+                transform: scale(1.05);
+
+            }
+        }
+    }
+}
+
+
+
+
+// POPUP
 
 // HEADER
 
@@ -19,9 +115,10 @@
     right: 150px;
     transition: all .3s;
 
-    &.dark{
+    &.dark {
         color: #000;
     }
+
     .logo {
         font-weight: bold;
         font-size: 24px;
@@ -384,9 +481,11 @@
     bottom: 60px;
     z-index: 10;
     transition: all .3s;
-    &.dark{
+
+    &.dark {
         color: #000;
     }
+
     &__list {
         display: flex;
     }

@@ -5,7 +5,24 @@
 <body>
   @@include('components/_header.html')
   <!-- WRITE CODE HERE -->
-
+  <div class="overflow"></div>
+  <div class="popup">
+    <button class="popup__close">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.5 1.5L1.5 16.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M1.5 1.5L16.5 16.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <h3 class="popup__title">
+      Оставьте ващи контакты чтобы мы могли связатся с вам!
+    </h3>
+    <form class="form" action="#">
+      <input class="form__input" type="text" placeholder="Полное имя">
+      <input class="form__input" type="email" placeholder="E-mail">
+      <input class="form__input" type="tel" placeholder="Телефон">
+      <button class="form__send">Отправить</button>
+    </form>
+  </div>
   <div id="fullpage">
 
     <!-- PROMOTION -->
@@ -22,7 +39,7 @@
           Поиско́вая оптимиза́ция — комплекс мер по внутренней и внешней оптимизации для поднятия позиций сайта в
           результатах выдачи поисковых систем по определённым запросам пользователей.
         </p>
-        <button class="main-button promotion__button">
+        <button class="main-button promotion__button popup-btn">
           Подробнее
         </button>
         <div class="promotion__next-wrapper">
@@ -208,7 +225,7 @@
                   <p class="price__card-bottom-price">
                     25 000₸
                   </p>
-                  <button class="main-button price__card-bottom-button">
+                  <button class="main-button price__card-bottom-button  popup-btn">
                     Купить услугу
                   </button>
                 </div>
@@ -228,7 +245,7 @@
                   <p class="price__card-bottom-price">
                     от 50 000₸
                   </p>
-                  <button class="main-button price__card-bottom-button">
+                  <button class="main-button price__card-bottom-button  popup-btn">
                     Купить услугу
                   </button>
                 </div>
