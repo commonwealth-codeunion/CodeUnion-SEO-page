@@ -18,6 +18,12 @@
     left: 50%;
     transform: translateX(-50%);
 
+    .logo {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 1;
+    }
+
     &__wrapper {
         display: flex;
         justify-content: space-between;
@@ -26,6 +32,7 @@
 
     &__nav {
         display: inherit;
+        align-items: center;
     }
 
     &__nav-item {
@@ -158,6 +165,7 @@
         display: flex;
         justify-content: space-between;
     }
+
     .swiper-button-prev,
     .swiper-button-next {
         top: 55%;
@@ -174,14 +182,52 @@
         position: relative;
         width: 114px;
     }
-    &__button{
+
+    &__button {
         padding: 11px 88px;
+    }
+}
+
+// SERVICES
+
+
+// TRUST
+
+.trust {
+    background-color: #fff;
+    color: #000;
+
+    &__title {
+        margin-bottom: 66px;
+    }
+
+    &__slider {
+        margin-left: 30%;
+        margin-bottom: 56px;
+    }
+
+    .swiper-wrapper {}
+
+    .swiper-slide img {
+        height: 100%;
+    }
+
+    &__prev-wrapper {
+        text-align: center;
+    }
+
+    &__prev-link {
+        border-radius: 50%;
+        background: transparent;
+        padding: 20px 15px 10px 15px;
+        border: 1px solid #000;
     }
 }
 
 
 
-// SERVICES
+// TRUST
+
 
 // FOOTER
 
