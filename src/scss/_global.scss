@@ -54,7 +54,7 @@ li {
 }
 
 .container {
-  width: 1620px;
+  width: 1410px;
   margin: 0 auto;
 }
 
@@ -67,6 +67,21 @@ li {
   padding: 11px 58px;
   font-size: 18px;
   line-height: 1.15;
+  transition: all .3s;
+
+  &.dark {
+    border: 1px solid #000;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+  }
 }
 
 .section {

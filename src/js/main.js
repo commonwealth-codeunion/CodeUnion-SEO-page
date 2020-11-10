@@ -1,16 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const trust = document.querySelector('.trust');
+    const mainButton = document.querySelector('.main-button');
+    const price = document.querySelector('.price');
     const header = document.querySelector('.header');
     const footer = document.querySelector('.footer');
-    const trustScrollHeight = trust.offsetTop;
-    console.log(trustScrollHeight);
+    const priceScrollHeight = price.offsetTop;
+    console.log(priceScrollHeight);
     document.addEventListener('scroll', ()=>{
-        if(pageYOffset >= trustScrollHeight){
-            header.style.color = "#000";
-            footer.style.color = "#000";
+        if(pageYOffset >= priceScrollHeight){
+            mainButton.classList.add("dark");
+            header.classList.add("dark");
+            footer.classList.add("dark");
         }else{
-            header.style.color = "";
-            footer.style.color = "";
+            mainButton.classList.remove("dark");
+            header.classList.remove("dark");
+            footer.classList.remove("dark");
         }
     })
     let servicesSwiper = new Swiper('.services__slider', {

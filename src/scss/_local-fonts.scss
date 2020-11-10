@@ -8,6 +8,15 @@
 }
 @font-face {
     font-family: "SF-Pro";
+    src: url("../fonts/SFProDisplay-LightItalic.woff2") format("woff2"),
+        url("../fonts/SFProDisplay-LightItalic.woff") format("woff"),
+        url("../fonts/SFProDisplay-LightItalic.eot") format("eot");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "SF-Pro";
     src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"),
         url("../fonts/SFProDisplay-Medium.woff") format("woff"),
         url("../fonts/SFProDisplay-Medium.eot") format("eot");
