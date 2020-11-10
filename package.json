@@ -15,6 +15,7 @@
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
     "fontforge": "^0.0.4",
+    "fullpage.js": "^3.0.9",
     "global": "^4.4.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",

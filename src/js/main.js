@@ -1,16 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
+    new fullpage('#fullpage', {
+        licenseKey: 'YOUR KEY HERE',
+    });
     const mainButton = document.querySelector('.main-button');
     const price = document.querySelector('.price');
     const header = document.querySelector('.header');
     const footer = document.querySelector('.footer');
     const priceScrollHeight = price.offsetTop;
     console.log(priceScrollHeight);
-    document.addEventListener('scroll', ()=>{
-        if(pageYOffset >= priceScrollHeight){
+    document.addEventListener('scroll', () => {
+        console.log(pageYOffset)
+        if (pageYOffset >= priceScrollHeight) {
             mainButton.classList.add("dark");
             header.classList.add("dark");
             footer.classList.add("dark");
-        }else{
+        } else {
             mainButton.classList.remove("dark");
             header.classList.remove("dark");
             footer.classList.remove("dark");
