@@ -47,7 +47,9 @@
 
 .promotion {
     position: relative;
-
+    background-image: url('../images/promotion-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
     &__title {}
 
     &__subtitle {
