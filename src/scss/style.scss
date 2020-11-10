@@ -1,0 +1,90 @@
+@import 'vars';
+@import 'fonts';
+@import 'global';
+
+//-----------------------------------------------------------------------------------------------------------
+//
+//                                                    START CODE
+//
+//-----------------------------------------------------------------------------------------------------------
+
+// HEADER
+
+.header {
+    position: fixed;
+    z-index: 10;
+    font-family: "SF-Pro", sans-serif;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__nav {
+        display: inherit;
+    }
+
+    &__nav-item {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.15;
+    }
+
+    &__nav-item+&__nav-item {
+        margin-left: 44px;
+    }
+
+}
+
+
+// HEADER
+
+
+// PROMOTION
+
+.promotion {
+    position: relative;
+
+    &__title {}
+
+    &__subtitle {
+        text-transform: uppercase;
+        margin-bottom: 33px;
+    }
+
+    &__paragraph {
+        max-width: 690px;
+        margin-bottom: 58px;
+    }
+
+    &__button {}
+
+    &__next-wrapper {
+        text-align: center;
+    }
+
+    &__next {
+        position: absolute;
+        bottom: 122px;
+        background: transparent;
+        border-radius: 50%;
+        padding: 14px 15px;
+        border: 1px solid #FFFFFF;
+    }
+}
+
+
+
+// PROMOTION
+
+
+//-----------------------------------------------------------------------------------------------------------
+//
+//                                                    END CODE
+//
+//-----------------------------------------------------------------------------------------------------------
+
+@import 'media';

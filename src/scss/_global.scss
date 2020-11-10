@@ -1,0 +1,94 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+
+body {
+  background-color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #fff;
+}
+
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:focus,
+input:focus {
+  outline: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  width: 1620px;
+  margin: 0 auto;
+}
+
+.main-button {
+  font-weight: 300;
+  font-family: "SF-Pro", sans-serif;
+  background: transparent;
+  color: inherit;
+  border: 1px solid #FFFFFF;
+  padding: 11px 58px;
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-weight: 300;
+  font-size: 66px;
+  line-height: 1.15;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 25px;
+}
+
+.paragraph {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 142.69%;
+}

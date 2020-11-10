@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "SF-Pro";
+    src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"),
+        url("../fonts/SFProDisplay-Light.woff") format("woff"),
+        url("../fonts/SFProDisplay-Light.eot") format("eot");
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: "SF-Pro";
+    src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"),
+        url("../fonts/SFProDisplay-Medium.woff") format("woff"),
+        url("../fonts/SFProDisplay-Medium.eot") format("eot");
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: "SF-Pro";
+    src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"),
+        url("../fonts/SFProDisplay-Semibold.woff") format("woff"),
+        url("../fonts/SFProDisplay-Semibold.eot") format("eot");
+    font-weight: 600;
+    font-display: swap;
+}
