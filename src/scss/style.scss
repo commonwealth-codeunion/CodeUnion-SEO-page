@@ -140,6 +140,22 @@
         font-weight: 600;
         font-size: 18px;
         line-height: 1.15;
+        position: relative;
+        &::after{
+            transition: all .3s;
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 0px;
+            left: 0;
+            right: 0;
+            bottom: -5px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        &:hover::after{
+            width: 100%;
+        }
     }
 
     &__nav-item+&__nav-item {

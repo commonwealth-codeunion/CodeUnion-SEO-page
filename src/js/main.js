@@ -1,28 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    new fullpage('#fullpage', {
-        licenseKey: 'YOUR KEY HERE',
-    });
+    const header = document.querySelector('.header');
+    const inputPhone = document.querySelector('#phone');
     const overflow = document.querySelector('.overflow');
     const popupBtn = document.querySelectorAll('.popup-btn');
     const popup = document.querySelector('.popup');
     const popupClose = document.querySelector('.popup__close');
     const mainButton = document.querySelector('.main-button');
-    const price = document.querySelector('.price');
-    const header = document.querySelector('.header');
     const footer = document.querySelector('.footer');
-    const priceScrollHeight = price.offsetTop;
-    // document.addEventListener('scroll', () => {
-    //     console.log(pageYOffset)
-    //     if (pageYOffset >= priceScrollHeight) {
-    //         mainButton.classList.add("dark");
-    //         header.classList.add("dark");
-    //         footer.classList.add("dark");
-    //     } else {
-    //         mainButton.classList.remove("dark");
-    //         header.classList.remove("dark");
-    //         footer.classList.remove("dark");
-    //     }
-    // });
+    new fullpage('#fullpage', {
+        licenseKey: 'YOUR KEY HERE',
+        navigation: true,
+    });
     popupBtn.forEach(elem => {
         elem.addEventListener('click', () => {
             popup.classList.add('active');
@@ -41,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.remove('lock');
     });
     let servicesSwiper = new Swiper('.services__slider', {
-        // effect: 'fade',
         speed: 400,
         loop: true,
         spaceBetween: 100,
@@ -60,5 +47,31 @@ document.addEventListener('DOMContentLoaded', () => {
         speed: 400,
         loop: true,
         spaceBetween: 108,
+    });
+    inputPhone.addEventListener('keydown', function (event) {
+        if (!(event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Backspace' || event.key == 'Tab')) {
+            event.preventDefault()
+        }
+        var mask = '+7 (111) 111-11-11'; // Задаем маску
+
+        if (/[0-9\+\ \-\(\)]/.test(event.key)) {
+            // Здесь начинаем сравнивать this.value и mask
+            // к примеру опять же
+            var currentString = this.value;
+            var currentLength = currentString.length;
+            if (/[0-9]/.test(event.key)) {
+                if (mask[currentLength] == '1') {
+                    this.value = currentString + event.key;
+                } else {
+                    for (var i = currentLength; i < mask.length; i++) {
+                        if (mask[i] == '1') {
+                            this.value = currentString + event.key;
+                            break;
+                        }
+                        currentString += mask[i];
+                    }
+                }
+            }
+        }
     });
 })
