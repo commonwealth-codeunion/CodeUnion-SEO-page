@@ -7,6 +7,64 @@
 //                                                    START CODE
 //
 //-----------------------------------------------------------------------------------------------------------
+// FULLPAGE NAV
+body {
+
+    &.fp-viewing-price,
+    &.fp-viewing-trust {
+        #fp-nav ul li a.active span {
+            background-color: #000;
+        }
+        #fp-nav ul li:hover a span {
+            background-color: #000;
+        }
+        #fp-nav ul li a span {
+            border: 1px solid #000;
+        }
+    }
+}
+#fp-nav ul li, .fp-slidesNav ul li{
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    margin: 72px 0;
+}
+#fp-nav.fp-right {
+    right: 100px;
+}
+
+#fp-nav ul li a.active span {
+    height: 12px;
+    width: 12px;
+    margin: 0;
+    border-radius: 100%;
+    background-color: #fff;
+}
+
+#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li a.active span, .fp-slidesNav ul li:hover a.active span,
+#fp-nav ul li:hover a span, .fp-slidesNav ul li:hover a span {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    background-color: #fff;
+}
+
+#fp-nav ul li a {
+    width: 12px;
+    height: 12px;
+    
+}
+
+#fp-nav ul li a span {
+    border: 1px solid #fff;
+    background: transparent;
+    margin: 0;
+    width: 12px;
+    height: 12px;
+}
+
+// FULLPAGE NAV
+
 // POPUP
 .overflow {
     position: fixed;
@@ -72,9 +130,11 @@
             color: #fff;
             font-size: 24px;
             line-height: 128%;
-            &:focus::placeholder{
+
+            &:focus::placeholder {
                 color: transparent;
             }
+
             &::placeholder {
                 color: #fff;
 
@@ -91,6 +151,7 @@
             background-color: #fff;
             border: none;
             transition: transform .3s;
+
             &:hover {
                 transform: scale(1.05);
 
@@ -132,10 +193,12 @@
         justify-content: space-between;
         align-items: center;
     }
-    &__nav-wrapper{
+
+    &__nav-wrapper {
         display: flex;
         align-items: center;
     }
+
     &__nav {
         display: inherit;
         align-items: center;
@@ -146,7 +209,8 @@
         font-size: 18px;
         line-height: 1.15;
         position: relative;
-        &::after{
+
+        &::after {
             transition: all .3s;
             content: "";
             position: absolute;
@@ -158,7 +222,8 @@
             margin: 0 auto;
             background-color: #fff;
         }
-        &:hover::after{
+
+        &:hover::after {
             width: 100%;
         }
     }
@@ -166,10 +231,11 @@
     &__nav-item {
         margin-left: 44px;
     }
-    &__burger{
+
+    &__burger {
         display: none;
-        span{
-        }
+
+        span {}
     }
 }
 

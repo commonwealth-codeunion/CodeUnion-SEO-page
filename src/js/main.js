@@ -13,12 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
     new fullpage('#fullpage', {
         licenseKey: 'YOUR KEY HERE',
         navigation: true,
+        anchors:['promotion', 'why', 'services', 'price', 'trust']
     });
     popupBtn.forEach(elem => {
         elem.addEventListener('click', () => {
             popup.classList.add('active');
             overflow.classList.add('active');
-            document.body.classList.add('lock');
         });
     })
     headerBurger.addEventListener('click', () => {
@@ -36,12 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
     popupClose.addEventListener('click', () => {
         popup.classList.remove('active');
         overflow.classList.remove('active');
-        document.body.classList.remove('lock');
     });
     overflow.addEventListener('click', () => {
         popup.classList.remove('active');
         overflow.classList.remove('active');
-        document.body.classList.remove('lock');
     });
     let servicesSwiper = new Swiper('.services__slider', {
         speed: 400,

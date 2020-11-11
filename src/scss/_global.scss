@@ -21,9 +21,6 @@ body {
   font-weight: 400;
   color: #fff;
   position: relative;
-  &.lock{
-    overflow: hidden;
-  }
   &.fp-viewing-price,
   &.fp-viewing-trust{
     .header,
@@ -102,7 +99,7 @@ li {
   }
 }
 
-.section {
+.page-section {
   height: 100vh;
   display: flex;
   align-items: center;
