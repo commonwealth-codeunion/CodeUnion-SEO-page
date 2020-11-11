@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
+    const headerBurger = document.querySelector('.header__burger');
+    const headerNav = document.querySelector('.header__nav');
+    const headerNavItem = document.querySelectorAll('.header__nav-item');
     const inputPhone = document.querySelector('#phone');
     const overflow = document.querySelector('.overflow');
     const popupBtn = document.querySelectorAll('.popup-btn');
@@ -17,6 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
             overflow.classList.add('active');
             document.body.classList.add('lock');
         });
+    })
+    headerBurger.addEventListener('click', () => {
+        headerBurger.classList.toggle('active');
+        headerNav.classList.toggle('active');
+        footer.classList.toggle('active');
+    });
+    headerNavItem.forEach((elem) => {
+        elem.addEventListener('click', () => {
+            headerBurger.classList.remove('active');
+            headerNav.classList.remove('active');
+            footer.classList.remove('active');
+        })
     })
     popupClose.addEventListener('click', () => {
         popup.classList.remove('active');
