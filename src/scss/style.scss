@@ -15,20 +15,25 @@ body {
         #fp-nav ul li a.active span {
             background-color: #000;
         }
+
         #fp-nav ul li:hover a span {
             background-color: #000;
         }
+
         #fp-nav ul li a span {
             border: 1px solid #000;
         }
     }
 }
-#fp-nav ul li, .fp-slidesNav ul li{
+
+#fp-nav ul li,
+.fp-slidesNav ul li {
     width: 12px;
     height: 12px;
     margin: 0;
     margin: 72px 0;
 }
+
 #fp-nav.fp-right {
     right: 100px;
 }
@@ -41,8 +46,12 @@ body {
     background-color: #fff;
 }
 
-#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li a.active span, .fp-slidesNav ul li:hover a.active span,
-#fp-nav ul li:hover a span, .fp-slidesNav ul li:hover a span {
+#fp-nav ul li a.active span,
+#fp-nav ul li:hover a.active span,
+.fp-slidesNav ul li a.active span,
+.fp-slidesNav ul li:hover a.active span,
+#fp-nav ul li:hover a span,
+.fp-slidesNav ul li:hover a span {
     width: 12px;
     height: 12px;
     margin: 0;
@@ -52,7 +61,7 @@ body {
 #fp-nav ul li a {
     width: 12px;
     height: 12px;
-    
+
 }
 
 #fp-nav ul li a span {
@@ -130,6 +139,16 @@ body {
             color: #fff;
             font-size: 24px;
             line-height: 128%;
+
+            &.wrong {
+                border: 1px solid #FF0000;
+                color: #FF0000;
+
+                &::placeholder {
+                    color: #FF0000;
+                }
+
+            }
 
             &:focus::placeholder {
                 color: transparent;

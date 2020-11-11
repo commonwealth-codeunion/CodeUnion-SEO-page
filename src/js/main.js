@@ -10,36 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const popupClose = document.querySelector('.popup__close');
     const mainButton = document.querySelector('.main-button');
     const footer = document.querySelector('.footer');
+    const form = document.querySelector(".form");
+    const validate = document.querySelectorAll(".form__input");
     new fullpage('#fullpage', {
         licenseKey: 'YOUR KEY HERE',
         navigation: true,
-        anchors:['promotion', 'why', 'services', 'price', 'trust']
-    });
-    popupBtn.forEach(elem => {
-        elem.addEventListener('click', () => {
-            popup.classList.add('active');
-            overflow.classList.add('active');
-        });
-    })
-    headerBurger.addEventListener('click', () => {
-        headerBurger.classList.toggle('active');
-        headerNav.classList.toggle('active');
-        footer.classList.toggle('active');
-    });
-    headerNavItem.forEach((elem) => {
-        elem.addEventListener('click', () => {
-            headerBurger.classList.remove('active');
-            headerNav.classList.remove('active');
-            footer.classList.remove('active');
-        })
-    })
-    popupClose.addEventListener('click', () => {
-        popup.classList.remove('active');
-        overflow.classList.remove('active');
-    });
-    overflow.addEventListener('click', () => {
-        popup.classList.remove('active');
-        overflow.classList.remove('active');
+        anchors: ['promotion', 'why', 'services', 'price', 'trust'],
+        parallax: true,
     });
     let servicesSwiper = new Swiper('.services__slider', {
         speed: 400,
@@ -75,6 +52,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+    
+    popupBtn.forEach(elem => {
+        elem.addEventListener('click', () => {
+            popup.classList.add('active');
+            overflow.classList.add('active');
+        });
+    })
+    headerBurger.addEventListener('click', () => {
+        headerBurger.classList.toggle('active');
+        headerNav.classList.toggle('active');
+        footer.classList.toggle('active');
+    });
+    headerNavItem.forEach((elem) => {
+        elem.addEventListener('click', () => {
+            headerBurger.classList.remove('active');
+            headerNav.classList.remove('active');
+            footer.classList.remove('active');
+        })
+    })
+    popupClose.addEventListener('click', () => {
+        popup.classList.remove('active');
+        overflow.classList.remove('active');
+    });
+    overflow.addEventListener('click', () => {
+        popup.classList.remove('active');
+        overflow.classList.remove('active');
+    });
     inputPhone.addEventListener('keydown', function (event) {
         if (!(event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Backspace' || event.key == 'Tab')) {
             event.preventDefault()
@@ -101,4 +105,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+    form.addEventListener('submit', () => {
+        event.preventDefault();
+        let phoneValidate = /([^0-9])/g
+        if(!validate[0].value){
+            validate[0].classList.add('wrong');
+        }else if(!validate[1].value){
+            validate[1].classList.add('wrong');
+        }else if(validate[2].value.replace(phoneValidate, '').length !== 11){
+            validate[2].classList.add('wrong');
+        }
+    })
+    validate.forEach((elem) => {
+        elem.addEventListener('click', () => {
+            elem.classList.remove('wrong')
+        })
+    })
 })
