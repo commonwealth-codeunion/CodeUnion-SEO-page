@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let servicesSwiper = new Swiper('.services__slider', {
         speed: 400,
         loop: true,
-        spaceBetween: 100,
+        spaceBetween: 200,
         pagination: {
             el: '.swiper-pagination',
             type: 'fraction',
@@ -62,6 +62,20 @@ document.addEventListener('DOMContentLoaded', () => {
         speed: 400,
         loop: true,
         spaceBetween: 108,
+        breakpoints: {
+            320: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            580: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            1280: {
+                slidesPerView: 3,
+                spaceBetween: 108
+            }
+        }
     });
     inputPhone.addEventListener('keydown', function (event) {
         if (!(event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Backspace' || event.key == 'Tab')) {

@@ -185,8 +185,6 @@
     background-repeat: no-repeat;
     background-position: center;
 
-    &__title {}
-
     &__subtitle {
         text-transform: uppercase;
         margin-bottom: 33px;
@@ -196,8 +194,6 @@
         max-width: 690px;
         margin-bottom: 58px;
     }
-
-    &__button {}
 
     &__next-wrapper {
         text-align: center;
@@ -265,7 +261,6 @@
         font-weight: 300;
         font-size: 20px;
         line-height: 153.34%;
-        list-style-type: disc;
         padding-left: 15px;
         position: relative;
 
@@ -280,7 +275,6 @@
     .swiper-container {
         margin-left: 0;
         width: 623px;
-        margin-bottom: 25px;
     }
 
     .swiper-wrapper {
@@ -355,7 +349,7 @@
         &__title {
             font-weight: 500;
             font-size: 20px;
-            line-height: 24px;
+            line-height: 1.2;
             margin-bottom: 5px;
         }
 
