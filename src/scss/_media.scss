@@ -207,19 +207,19 @@
         &__burger {
             border: none;
             background-color: transparent;
-            height: 10px;
+            height: 20px;
             display: block;
 
             &.active {
                 span {
                     &::before {
                         transform: rotate(45deg);
-                        top: 3.5px;
+                        top: 8.5px;
                     }
 
                     &::after {
                         transform: rotate(-45deg);
-                        bottom: 3.5px;
+                        bottom: 8.5px;
 
                     }
                 }
@@ -245,11 +245,11 @@
                 }
 
                 &::before {
-                    top: 0px;
+                    top: 5px;
                 }
 
                 &::after {
-                    bottom: 0px;
+                    bottom: 5px;
                 }
 
             }
@@ -359,7 +359,7 @@
 
     .price {
         &__card {
-            min-height: 200px;
+            min-height: 150px;
             padding: 10px 10px;
         }
 
@@ -472,9 +472,6 @@
     }
 
     .price {
-        &__card {
-            min-height: 150px;
-        }
 
         &__card-bottom {
             &__item {
