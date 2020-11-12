@@ -2,9 +2,11 @@
     .container {
         width: 90%;
     }
+
     #fp-nav.fp-right {
         right: 25px;
     }
+
     .popup {
         padding: 60px 40px 70px;
         max-width: 500px;
@@ -35,6 +37,7 @@
 
 
     .header {
+        top: 25px;
         right: 75px;
         left: 75px;
 
@@ -45,6 +48,9 @@
 
     .services {
         background-position: 0 center;
+        &__title {
+            margin-bottom: 20px;
+        }
     }
 
     .price {
@@ -98,6 +104,7 @@
 
     .services {
         background-position: -100px center;
+        
     }
 
     .price {
@@ -170,7 +177,6 @@
     }
 
     .header {
-        top: 25px;
         left: 5%;
         right: 5%;
 
@@ -270,6 +276,8 @@
     .services {
         background-size: 0%;
 
+        
+
         .swiper-container {
             width: 100%;
         }
@@ -295,7 +303,7 @@
         visibility: hidden;
         opacity: 0;
         transition: all .5s;
-
+        bottom: 20px;
         &__list {
             flex-direction: column;
             align-items: center;
@@ -304,7 +312,7 @@
 
         &__item+&__item {
             margin-left: 0;
-            margin-top: 6px;
+            margin-top: 20px;
         }
 
         &.active {
@@ -329,6 +337,15 @@
             padding: 0;
             bottom: 30px;
         }
+        &__next-svg{
+            height: 100px;
+        }
+        &__next-line{
+            transform: scaleY(3);
+        }
+        &__next-arrow{
+            transform: scale(.8) translate(2.5px, 54px);
+        }
     }
 
     .why {
@@ -343,7 +360,7 @@
         }
 
         &__subtitle {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
 
             span {
                 font-size: 18px;
@@ -393,6 +410,17 @@
 
         &__title {
             margin-bottom: 20px;
+        }
+    }
+    .trust{
+        &__prev-svg{
+            height: 100px;
+        }
+        &__prev-line{
+            transform: scaleY(3);
+        }
+        &__prev-arrow{
+            transform: scale(.8) translate(2.5px, 0px);
         }
     }
 }
@@ -446,10 +474,11 @@
 
     .services {
         &__list-item {
-            font-size: 16px;
+            font-size: 17px;
         }
     }
-    .contacts{
+
+    .contacts {
         margin-bottom: 10px;
     }
 }
@@ -469,7 +498,7 @@
         }
 
         &__list-item {
-            font-size: 12px;
+            font-size: 13px;
         }
     }
 

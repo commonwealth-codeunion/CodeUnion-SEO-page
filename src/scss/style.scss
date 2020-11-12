@@ -280,17 +280,19 @@ body {
         margin-bottom: 58px;
     }
 
-    &__next-wrapper {
-        text-align: center;
-    }
-
     &__next {
         position: absolute;
         bottom: 122px;
         background: transparent;
         border-radius: 50%;
+        left: 50%;
+        transform: translateX(-50%);
         padding: 14px 15px;
         border: 1px solid #FFFFFF;
+    }
+
+    &__next-svg {
+        height: 22px;
     }
 }
 
@@ -339,11 +341,11 @@ body {
 
     &__list {
         font-family: "SF-Pro";
+        font-weight: 300;
 
     }
 
     &__list-item {
-        font-weight: 300;
         font-size: 20px;
         line-height: 153.34%;
         padding-left: 15px;
@@ -544,6 +546,7 @@ body {
 .trust {
     background-color: #fff;
     color: #000;
+    position: relative;
 
     &__title {
         margin-bottom: 66px;
@@ -554,20 +557,24 @@ body {
         margin-bottom: 56px;
     }
 
-    .swiper-wrapper {}
 
     .swiper-slide img {
         width: 100%;
     }
 
-    &__prev-wrapper {
-        text-align: center;
+    &__prev-svg {
+        height: 22px;
     }
 
     &__prev-link {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
         border-radius: 50%;
         background: transparent;
-        padding: 20px 15px 10px 15px;
+        padding: 15px 15px 10px 15px;
         border: 1px solid #000;
     }
 }
