@@ -194,9 +194,9 @@
             justify-content: center;
             position: fixed;
             top: 0;
-            bottom: 0;
             left: 0;
-            right: 0;
+            height: 100vh;
+            width: 100vw;
             background-color: #000;
             transition: all .5s;
             transform: translateY(-100%);
@@ -312,7 +312,7 @@
         &__prev-link {
             display: none;
         }
-        &__list{
+        &__list.footer__list {
             position: absolute;
             display: block;
             bottom: 20px;
