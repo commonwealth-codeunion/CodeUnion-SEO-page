@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         licenseKey: 'YOUR KEY HERE',
         navigation: true,
         anchors: ['promotion', 'why', 'services', 'price', 'trust'],
-        normalScrollElements: ['.price__items-wrapper', '.trust__slider']
+        normalScrollElements: '.price__items-wrapper, .trust__slider',
     });
     let servicesSwiper = new Swiper('.services__slider', {
         speed: 400,
