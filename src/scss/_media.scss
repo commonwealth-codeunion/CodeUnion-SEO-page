@@ -310,8 +310,12 @@
         }
 
         &__prev-link {
-            border: 0px;
-            padding: 0;
+            display: none;
+        }
+        &__list{
+            position: absolute;
+            display: block;
+            bottom: 20px;
         }
     }
 
@@ -346,7 +350,7 @@
         }
 
         &__paragraph {
-            margin-bottom: 25px;
+            margin: 0 auto 25px;
         }
 
         &__next {
@@ -370,7 +374,7 @@
 
     .why {
         &__title {
-            margin-bottom: 20px;
+            margin: 0 auto 20px;
         }
     }
 
@@ -427,6 +431,9 @@
     }
 
     .trust {
+        &__title{
+            margin-bottom: 30px;
+        }
         &__prev-svg {
             height: 100px;
         }

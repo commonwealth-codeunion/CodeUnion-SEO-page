@@ -10,6 +10,7 @@
 // FULLPAGE NAV
 body {
     overflow-x: hidden;
+
     &.fp-viewing-price,
     &.fp-viewing-trust {
         #fp-nav ul li a.active span {
@@ -75,21 +76,24 @@ body {
 // FULLPAGE NAV
 
 // POPUP
-.overflow {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: #000;
-    z-index: 80;
-    opacity: 0;
-    visibility: hidden;
-    transition: all .3s;
+.wrapper {
+    -webkit-filter: blur(0);
+    -moz-filter: blur(0);
+    -o-filter: blur(0);
+    -ms-filter: blur(0);
+    filter: blur(0);
 
     &.active {
-        opacity: .8;
-        visibility: visible;
+
+        &,
+        &+.fp-right {
+            -webkit-filter: blur(10px);
+            -moz-filter: blur(10px);
+            -o-filter: blur(10px);
+            -ms-filter: blur(10px);
+            filter: blur(10px);
+        }
+
     }
 }
 
@@ -576,6 +580,10 @@ body {
         background: transparent;
         padding: 15px 15px 10px 15px;
         border: 1px solid #000;
+    }
+
+    &__list.footer__list {
+        display: none;
     }
 }
 

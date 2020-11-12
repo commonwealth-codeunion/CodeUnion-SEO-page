@@ -16,6 +16,7 @@ body {
   scroll-behavior: smooth;
 
 }
+
 body {
   height: -webkit-fill-available;
   background-color: #000;
@@ -23,27 +24,38 @@ body {
   font-weight: 400;
   color: #fff;
   position: relative;
+
+  &.blur {
+    filter: blur(50px);
+    z-index: -1;
+  }
+
   &.fp-viewing-price,
-  &.fp-viewing-trust{
+  &.fp-viewing-trust {
+
     .header,
-    .footer{
+    .footer {
       color: #000;
     }
-    .header{
-      &__nav-item::after{
+
+    .header {
+      &__nav-item::after {
         background-color: #000;
       }
     }
-    .main-button{
+
+    .main-button {
       border: 1px solid #000;
+
       &:hover {
         background-color: #000;
         color: #fff;
       }
     }
   }
-  &.fp-viewing-trust{
-    .footer{
+
+  &.fp-viewing-trust {
+    .footer {
       bottom: 100px;
     }
   }
