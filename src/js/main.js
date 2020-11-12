@@ -68,16 +68,22 @@ document.addEventListener('DOMContentLoaded', () => {
             event.stopPropagation()
             popup.classList.toggle('active');
             wrapper.classList.toggle('active');
+            fullpage_api.setAllowScrolling(false);
+            fullpage_api.setKeyboardScrolling(false);
         });
     })
     popupClose.addEventListener('click', () => {
         popup.classList.remove('active');
         wrapper.classList.remove('active');
+        fullpage_api.setAllowScrolling(true);
+        fullpage_api.setKeyboardScrolling(true);
 
     });
     wrapper.addEventListener('click', () => {
         popup.classList.remove('active');
         wrapper.classList.remove('active');
+        fullpage_api.setAllowScrolling(true);
+        fullpage_api.setKeyboardScrolling(true);
     });
     inputPhone.addEventListener('keydown', function (event) {
         if (!(event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Backspace' || event.key == 'Tab')) {
