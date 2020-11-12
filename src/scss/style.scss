@@ -87,7 +87,7 @@ body {
     &.active {
 
         &,
-        &+.fp-right {
+        & ~ .fp-right {
             -webkit-filter: blur(31px);
             -moz-filter: blur(31px);
             -o-filter: blur(31px);
