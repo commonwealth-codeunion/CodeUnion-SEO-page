@@ -389,12 +389,22 @@
         }
 
         &__items-wrapper {
-            max-width: 50%;
+            max-width: 90vw;
             overflow-x: scroll;
+            position: relative;
+            &::before{
+                content: "";
+                position: absolute;
+                left: 80vw;
+                background-color: #fff;
+                opacity: .3;
+                width: 50px;
+                height: 100%;
+            }
         }
 
         &__card {
-            min-width: 300px;
+            min-width: 350px;
             display: inline-block;
         }
 

@@ -9,7 +9,7 @@
 //-----------------------------------------------------------------------------------------------------------
 // FULLPAGE NAV
 body {
-
+    overflow-x: hidden;
     &.fp-viewing-price,
     &.fp-viewing-trust {
         #fp-nav ul li a.active span {
