@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const footer = document.querySelector('.footer');
     const form = document.querySelector(".form");
     const validate = document.querySelectorAll(".form__input");
-    // new fullpage('#fullpage', {
-    //     licenseKey: 'YOUR KEY HERE',
-    //     navigation: true,
-    //     anchors: ['promotion', 'why', 'services', 'price', 'trust'],
-    //     parallax: true,
-    // });
+    new fullpage('#fullpage', {
+        licenseKey: 'YOUR KEY HERE',
+        navigation: true,
+        anchors: ['promotion', 'why', 'services', 'price', 'trust'],
+        parallax: true,
+    });
     let servicesSwiper = new Swiper('.services__slider', {
         speed: 400,
         loop: true,
