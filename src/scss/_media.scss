@@ -389,10 +389,8 @@
         }
 
         &__items-wrapper {
-            display: block;
-            white-space: nowrap;
+            max-width: 50%;
             overflow-x: scroll;
-            overflow-y: hidden;
         }
 
         &__card {
