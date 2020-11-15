@@ -268,7 +268,47 @@ body {
     }
 }
 
+// LINE
 
+body{
+    &.fp-viewing-promotion{
+        .header{
+            &__nav-item:nth-child(1):after{
+                width: 100%;
+            }
+        }
+    }
+    &.fp-viewing-why{
+        .header{
+            &__nav-item:nth-child(2):after{
+                width: 100%;
+            }
+        }
+    }
+    &.fp-viewing-services{
+        .header{
+            &__nav-item:nth-child(3):after{
+                width: 100%;
+            }
+        }
+    }
+    &.fp-viewing-price{
+        .header{
+            &__nav-item:nth-child(4):after{
+                width: 100%;
+            }
+        }
+    }
+    &.fp-viewing-trust{
+        .header{
+            &__nav-item:nth-child(5):after{
+                width: 100%;
+            }
+        }
+    }
+}
+
+// LINE
 // HEADER
 
 
