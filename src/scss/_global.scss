@@ -105,9 +105,9 @@ li {
   background: transparent;
   color: inherit;
   border: 1px solid #FFFFFF;
-  padding: 11px 58px;
-  font-size: 18px;
-  line-height: 1.15;
+  padding: 12px 60px;
+  font-size: 21px;
+  line-height: 25px;
   transition: all .3s;
   overflow: visible;
   border-radius: 3px;
@@ -126,9 +126,11 @@ li {
 }
 
 .title {
+  font-family: "SF-Pro", sans-serif;
   font-weight: 300;
   font-size: 66px;
   line-height: 1.15;
+
 }
 
 .subtitle {

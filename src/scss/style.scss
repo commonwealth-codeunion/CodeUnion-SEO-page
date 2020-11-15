@@ -36,7 +36,8 @@ body {
 }
 
 #fp-nav.fp-right {
-    right: 100px;
+    margin-top: 21px;
+    right: 172px;
 }
 
 #fp-nav ul li a.active span {
@@ -87,7 +88,7 @@ body {
     &.active {
 
         &,
-        & ~ .fp-right {
+        &~.fp-right {
             -webkit-filter: blur(31px);
             -moz-filter: blur(31px);
             -o-filter: blur(31px);
@@ -105,7 +106,7 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    padding: 80px 95px 90px;
+    padding: 50px 92px 70px;
     z-index: 99;
     background-color: #000;
     max-width: 733px;
@@ -195,9 +196,9 @@ body {
     position: fixed;
     z-index: 10;
     font-family: "SF-Pro", sans-serif;
-    top: 50px;
-    left: 150px;
-    right: 150px;
+    top: 46px;
+    left: 110px;
+    right: 110px;
     transition: all .3s;
 
     &.dark {
@@ -256,10 +257,14 @@ body {
         margin-left: 44px;
     }
 
+    &__popup {
+        padding: 12px 64px 10px;
+        font-size: 18px;
+        line-height: 1.15;
+    }
+
     &__burger {
         display: none;
-
-        span {}
     }
 }
 
@@ -274,7 +279,10 @@ body {
     background-image: url('../images/promotion-bg.jpg');
     background-repeat: no-repeat;
     background-position: center;
-
+    margin-top: 50px;
+    &__title{
+        font-family: 'Roboto', sans-serif;
+    }
     &__subtitle {
         text-transform: uppercase;
         margin-bottom: 33px;
@@ -287,7 +295,7 @@ body {
 
     &__next {
         position: absolute;
-        bottom: 122px;
+        bottom: 90px;
         background: transparent;
         border-radius: 50%;
         left: 50%;
@@ -308,13 +316,15 @@ body {
 // WHY
 
 .why {
+    margin-top: 100px;
     &__title {
         max-width: 576px;
         margin-bottom: 44px;
+        font-family: "SF-Pro", sans-serif;
     }
 
     &__paragraph {
-        width: 480px;
+        width: 479px;
     }
 }
 
@@ -351,8 +361,9 @@ body {
     }
 
     &__list-item {
+        font-family: "SF-Pro", sans-serif;
         font-size: 20px;
-        line-height: 153.34%;
+        line-height: 180%;
         padding-left: 15px;
         position: relative;
 
