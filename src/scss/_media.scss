@@ -270,6 +270,7 @@
     }
 
     .promotion {
+        margin-top: 0;
         background-size: 0%;
 
         &__paragraph {
@@ -277,7 +278,9 @@
         }
 
     }
-
+    .why{
+        margin-top: 0;
+    }
     .services {
         background-size: 0%;
 
@@ -522,9 +525,6 @@
     }
 
     .price {
-        &__card{
-            
-        }
         &__card-top__subtitle{
             margin-bottom: 10px;
         }
