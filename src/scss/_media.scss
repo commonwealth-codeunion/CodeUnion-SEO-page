@@ -357,6 +357,13 @@
             border: 0;
             padding: 0;
             bottom: 30px;
+            &:hover {
+                background-color: transparent;
+    
+                .promotion__next-path {
+                    stroke: #fff;
+                }
+            }
         }
 
         &__next-svg {
@@ -415,8 +422,6 @@
             }
         }
 
-        &__items-wrapper {}
-
         &__items-list-title {
             margin-bottom: 5px;
         }
@@ -433,17 +438,6 @@
     .trust {
         &__title{
             margin-bottom: 30px;
-        }
-        &__prev-svg {
-            height: 100px;
-        }
-
-        &__prev-line {
-            transform: scaleY(3);
-        }
-
-        &__prev-arrow {
-            transform: scale(.8) translate(2.5px, 0px);
         }
     }
 }

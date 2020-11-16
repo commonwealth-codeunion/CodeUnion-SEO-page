@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
     let trustSwiper = new Swiper('.trust__slider', {
-        // effect: 'fade',
         slidesPerView: 3,
         speed: 600,
         loop: true,
@@ -116,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     form.addEventListener('submit', () => {
         event.preventDefault();
-        let phoneValidate = /([^0-9])/g
+        let phoneValidate = /([^0-9])/g;
         if (!validate[0].value) {
             validate[0].classList.add('wrong');
         } else if (!validate[1].value) {

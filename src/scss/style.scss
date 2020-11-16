@@ -79,11 +79,6 @@ body {
 // POPUP
 .wrapper {
     position: relative;
-    -webkit-filter: blur(0);
-    -moz-filter: blur(0);
-    -o-filter: blur(0);
-    -ms-filter: blur(0);
-    filter: blur(0);
 
     &.active {
 
@@ -210,7 +205,6 @@ body {
         z-index: 99;
         font-weight: bold;
         font-size: 22px;
-        line-height: 1;
     }
 
     &__wrapper {
@@ -270,38 +264,42 @@ body {
 
 // LINE
 
-body{
-    &.fp-viewing-promotion{
-        .header{
-            &__nav-item:nth-child(1):after{
+body {
+    &.fp-viewing-promotion {
+        .header {
+            &__nav-item:nth-child(1):after {
                 width: 100%;
             }
         }
     }
-    &.fp-viewing-why{
-        .header{
-            &__nav-item:nth-child(2):after{
+
+    &.fp-viewing-why {
+        .header {
+            &__nav-item:nth-child(2):after {
                 width: 100%;
             }
         }
     }
-    &.fp-viewing-services{
-        .header{
-            &__nav-item:nth-child(3):after{
+
+    &.fp-viewing-services {
+        .header {
+            &__nav-item:nth-child(3):after {
                 width: 100%;
             }
         }
     }
-    &.fp-viewing-price{
-        .header{
-            &__nav-item:nth-child(4):after{
+
+    &.fp-viewing-price {
+        .header {
+            &__nav-item:nth-child(4):after {
                 width: 100%;
             }
         }
     }
-    &.fp-viewing-trust{
-        .header{
-            &__nav-item:nth-child(5):after{
+
+    &.fp-viewing-trust {
+        .header {
+            &__nav-item:nth-child(5):after {
                 width: 100%;
             }
         }
@@ -320,9 +318,11 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     margin-top: 50px;
-    &__title{
+
+    &__title {
         font-family: 'Roboto', sans-serif;
     }
+
     &__subtitle {
         text-transform: uppercase;
         margin-bottom: 33px;
@@ -340,8 +340,21 @@ body{
         border-radius: 50%;
         left: 50%;
         transform: translateX(-50%);
-        padding: 14px 15px;
-        border: 1px solid #FFFFFF;
+        padding: 14px 15px 12px 15px;
+        border: 1px solid #FFF;
+        transition: all .3s;
+
+        &:hover {
+            background-color: #fff;
+
+            .promotion__next-path {
+                stroke: #000;
+            }
+        }
+    }
+
+    &__next-path {
+        stroke: #fff;
     }
 
     &__next-svg {
@@ -357,6 +370,7 @@ body{
 
 .why {
     margin-top: 100px;
+
     &__title {
         max-width: 576px;
         margin-bottom: 44px;
@@ -629,8 +643,20 @@ body{
         text-align: center;
         border-radius: 50%;
         background: transparent;
-        padding: 15px 15px 10px 15px;
+        padding: 15px 14px 10px 14px;
         border: 1px solid #000;
+        transition: all .3s;
+
+        &:hover {
+            background-color: #000;
+
+            .trust__prev-path {
+                stroke: #fff;
+            }
+        }
+    }
+    &__prev-path{
+        stroke: #000;
     }
 
     &__list.footer__list {
