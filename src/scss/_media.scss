@@ -130,11 +130,6 @@
         padding: 25px 0;
     }
 
-    .trust {
-        &__slider {
-            margin-left: 0;
-        }
-    }
 
     .footer {
         &__item {
@@ -304,7 +299,9 @@
 
     .trust {
         position: relative;
-
+        &__slider{
+            margin-left: 0;
+        }
         &__prev-wrapper {
             position: absolute;
             right: 0;

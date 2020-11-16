@@ -32,9 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let trustSwiper = new Swiper('.trust__slider', {
         // effect: 'fade',
         slidesPerView: 3,
-        speed: 400,
+        speed: 600,
         loop: true,
         spaceBetween: 108,
+        autoplay: {
+            delay: 2000,
+        },
         breakpoints: {
             320: {
                 slidesPerView: 2,
@@ -42,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             580: {
                 slidesPerView: 3,
-                spaceBetween: 30
+                spaceBetween: 50
             },
             1280: {
                 slidesPerView: 3,
