@@ -414,9 +414,7 @@
 
     .price {
         &__card {
-            min-height: 165px;
             padding: 10px 10px;
-            min-width: 350px;
         }
 
         &__card-top {
@@ -499,6 +497,10 @@
     }
     .price{
         padding-top: 20px;
+        &__card{
+            min-height: 165px;
+            min-width: 350px;
+        }
     }
     .contacts {
         margin-bottom: 20px;
