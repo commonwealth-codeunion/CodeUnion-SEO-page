@@ -264,6 +264,7 @@ body {
 
 // LINE
 
+
 body {
     &.fp-viewing-promotion {
         .header {
@@ -314,10 +315,7 @@ body {
 
 .promotion {
     position: relative;
-    background-image: url('../images/promotion-bg.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 50px;
+    padding-top: 50px;
 
     &__title {
         font-family: 'Roboto', sans-serif;
@@ -387,11 +385,7 @@ body {
 // SERVICES
 
 .services {
-    background-image: url('../images/services-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right center;
-
+    position: relative;
     &__title {
         margin-bottom: 57px;
     }
@@ -655,7 +649,8 @@ body {
             }
         }
     }
-    &__prev-path{
+
+    &__prev-path {
         stroke: #000;
     }
 
