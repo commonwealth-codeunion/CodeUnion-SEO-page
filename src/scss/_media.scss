@@ -172,12 +172,14 @@
             }
         }
     }
-    .section-bg{
+
+    .section-bg {
         display: none;
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
     }
+
     .title {
         font-size: 50px;
     }
@@ -495,26 +497,55 @@
         }
     }
 
+    .main-button {
+        font-size: 16px;
+        padding: 8px 22px;
+    }
+
     .title {
-        font-size: 35px;
+        font-size: 36px;
     }
 
     .subtitle {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .services {
+
+        .services__subtitle {
+
+            span {
+                font-size: 16px;
+            }
+
+        }
+
         &__list-item {
-            font-size: 17px;
+            font-size: 14px;
         }
     }
 
     .price {
         padding-top: 20px;
-
+        &__card-top{
+            &__title{
+                font-size: 16px;
+            }
+            &__subtitle{
+                font-size: 14px;
+            }
+        }
         &__card {
-            min-height: 165px;
+            min-height: 185px;
             min-width: 350px;
+        }
+        &__card-bottom{
+            &__item{
+                font-size: 14px;
+            }
+            &__item-link{
+                font-size: 14px;
+            }
         }
     }
 
