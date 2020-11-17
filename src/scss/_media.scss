@@ -47,11 +47,14 @@
     }
 
     .services {
-        background-position: 0 center;
+        &__bg {
+            right: -100px;
+        }
 
         &__title {
             margin-bottom: 20px;
         }
+
         &__list-item {
             line-height: 140%;
         }
@@ -107,8 +110,9 @@
     }
 
     .services {
-        background-position: -100px center;
-
+        &__bg {
+            right: -200px;
+        }
     }
 
     .price {
@@ -168,7 +172,12 @@
             }
         }
     }
-
+    .section-bg{
+        display: none;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
     .title {
         font-size: 50px;
     }
@@ -271,20 +280,18 @@
 
     .promotion {
         padding-top: 0;
-        background-size: 0%;
 
         &__paragraph {
             max-width: 100%;
         }
 
     }
-    .why{
+
+    .why {
         margin-top: 0;
     }
+
     .services {
-        background-size: 0%;
-
-
 
         .swiper-container {
             width: 100%;
@@ -302,9 +309,11 @@
 
     .trust {
         position: relative;
-        &__slider{
+
+        &__slider {
             margin-left: 0;
         }
+
         &__prev-wrapper {
             position: absolute;
             right: 0;
@@ -315,6 +324,7 @@
         &__prev-link {
             display: none;
         }
+
         &__list.footer__list {
             position: absolute;
             display: block;
@@ -348,6 +358,7 @@
 @media(max-width: 768px) {
     .promotion {
         text-align: center;
+
         &__subtitle {
             margin-bottom: 20px;
         }
@@ -360,9 +371,10 @@
             border: 0;
             padding: 0;
             bottom: 30px;
+
             &:hover {
                 background-color: transparent;
-    
+
                 .promotion__next-path {
                     stroke: #fff;
                 }
@@ -431,13 +443,14 @@
     .contacts {
         padding: 15px 0;
         margin-bottom: 20px;
+
         &__title {
             margin-bottom: 20px;
         }
     }
 
     .trust {
-        &__title{
+        &__title {
             margin-bottom: 30px;
         }
     }
@@ -495,13 +508,16 @@
             font-size: 17px;
         }
     }
-    .price{
+
+    .price {
         padding-top: 20px;
-        &__card{
+
+        &__card {
             min-height: 165px;
             min-width: 350px;
         }
     }
+
     .contacts {
         margin-bottom: 20px;
     }
@@ -527,14 +543,16 @@
     }
 
     .price {
-        &__card-top__subtitle{
+        &__card-top__subtitle {
             margin-bottom: 10px;
         }
+
         &__card-bottom {
             &__item {
                 margin-top: 5px;
                 font-size: 18px;
-                span{
+
+                span {
                     margin-right: 5px;
                 }
             }
