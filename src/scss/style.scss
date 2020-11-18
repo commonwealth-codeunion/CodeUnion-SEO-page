@@ -1,12 +1,14 @@
 @import 'vars';
 @import 'fonts';
 @import 'global';
+@import 'preloader';
 
 //-----------------------------------------------------------------------------------------------------------
 //
 //                                                    START CODE
 //
 //-----------------------------------------------------------------------------------------------------------
+
 // FULLPAGE NAV
 body {
     overflow-x: hidden;
@@ -38,6 +40,7 @@ body {
 #fp-nav.fp-right {
     margin-top: 21px;
     right: 172px;
+    z-index: 10;
 }
 
 #fp-nav ul li a.active span {
@@ -386,6 +389,7 @@ body {
 
 .services {
     position: relative;
+
     &__title {
         margin-bottom: 57px;
     }

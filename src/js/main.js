@@ -1,15 +1,18 @@
+const preloader = document.querySelector('.preloader');
+const headerBurger = document.querySelector('.header__burger');
+const headerNav = document.querySelector('.header__nav');
+const headerNavItem = document.querySelectorAll('.header__nav-item');
+const inputPhone = document.querySelector('#phone');
+const wrapper = document.querySelector('.wrapper');
+const popupBtn = document.querySelectorAll('.popup-btn');
+const popup = document.querySelector('.popup');
+const popupClose = document.querySelector('.popup__close');
+const footer = document.querySelector('.footer');
+const form = document.querySelector(".form");
+const validate = document.querySelectorAll(".form__input");
 document.addEventListener('DOMContentLoaded', () => {
-    const headerBurger = document.querySelector('.header__burger');
-    const headerNav = document.querySelector('.header__nav');
-    const headerNavItem = document.querySelectorAll('.header__nav-item');
-    const inputPhone = document.querySelector('#phone');
-    const wrapper = document.querySelector('.wrapper');
-    const popupBtn = document.querySelectorAll('.popup-btn');
-    const popup = document.querySelector('.popup');
-    const popupClose = document.querySelector('.popup__close');
-    const footer = document.querySelector('.footer');
-    const form = document.querySelector(".form");
-    const validate = document.querySelectorAll(".form__input");
+    preloader.classList.add('loaded');
+    document.body.style.overflow = ''
     new fullpage('#fullpage', {
         licenseKey: 'YOUR KEY HERE',
         navigation: true,
