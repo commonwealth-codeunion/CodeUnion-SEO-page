@@ -323,10 +323,6 @@
             bottom: 50px;
         }
 
-        &__prev-link {
-            display: none;
-        }
-
         &__list.footer__list {
             position: absolute;
             display: block;
@@ -454,6 +450,32 @@
     .trust {
         &__title {
             margin-bottom: 30px;
+        }
+        &__prev-link {
+            border: none;
+            border: 0;
+            padding: 0;
+            bottom: 90px;
+
+            &:hover {
+                background-color: transparent;
+
+                .trust__prev-path {
+                    stroke: #fff;
+                }
+            }
+        }
+
+        &__prev-svg {
+            height: 100px;
+        }
+
+        &__prev-line {
+            transform: scaleY(3);
+        }
+
+        &__prev-arrow {
+            transform: scale(.8) translate(2.5px, 0);
         }
     }
 }
@@ -602,6 +624,33 @@
 
         &__title {
             margin-bottom: 10px;
+        }
+    }
+    .trust {
+        &__title {
+            margin-bottom: 30px;
+        }
+        &__prev-link {
+            border: none;
+            border: 0;
+            padding: 0;
+            bottom: 70px;
+            z-index: 10;
+            &:hover {
+                background-color: transparent;
+
+                .trust__prev-path {
+                    stroke: #fff;
+                }
+            }
+        }
+
+        &__prev-line {
+            transform: scaleY(2);
+        }
+
+        &__prev-arrow {
+            transform: scale(.8) translate(2.5px, 0);
         }
     }
 }
