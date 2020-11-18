@@ -143,25 +143,39 @@ body {
             color: #fff;
             font-size: 22px;
             line-height: 128%;
+            
+            &:focus::placeholder{
+                color: transparent;
 
+            }
+            &:focus::-moz-placeholder {
+                color: transparent;
+            }
+
+            &::placeholder{
+                color: #fff;
+
+            }
+            &::-moz-placeholder {
+                color: #fff;
+                opacity: 1;
+
+            }
             &.wrong {
                 border: 1px solid #FF0000;
                 color: #FF0000;
 
-                &::placeholder {
+                &::placeholder{
                     color: #FF0000;
+
+                }
+                &::-moz-placeholder {
+                    color: #FF0000;
+                    opacity: 1;
                 }
 
             }
 
-            &:focus::placeholder {
-                color: transparent;
-            }
-
-            &::placeholder {
-                color: #fff;
-
-            }
 
         }
 
