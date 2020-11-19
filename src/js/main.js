@@ -20,7 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
         normalScrollElements: '.price__items-wrapper, .trust__slider',
     });
     let servicesSwiper = new Swiper('.services__slider', {
-        speed: 400,
+        fadeEffect: {
+            crossFade: true
+        },
+        effect: "fade",
+        speed: 500,
         loop: true,
         spaceBetween: 200,
         pagination: {
@@ -38,7 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
         loop: true,
         spaceBetween: 108,
         autoplay: {
-            delay: 2000,
+            delay: 1500,
+            disableOnInteraction: false,
         },
         breakpoints: {
             320: {

@@ -332,7 +332,7 @@ body {
 
 .promotion {
     position: relative;
-
+    background: transparent;
     &__title {
         font-family: 'Roboto', sans-serif;
     }
@@ -443,8 +443,9 @@ body {
         margin-left: 0;
         width: 623px;
     }
-
+    
     .swiper-wrapper {
+        cursor: pointer;
         align-items: center;
     }
 
@@ -633,6 +634,7 @@ body {
     }
 
     &__slider {
+        cursor: e-resize;
         margin-left: 30%;
     }
 

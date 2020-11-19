@@ -30,7 +30,19 @@ body {
     filter: blur(50px);
     z-index: -1;
   }
-
+  &.fp-viewing-price{
+    .footer{
+      bottom: 100px;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  &.fp-viewing-services{
+    .section-bg{
+      -webkit-appearance: none;
+      appearance: none;
+    }
+  }
   &.fp-viewing-price,
   &.fp-viewing-trust {
 
@@ -98,16 +110,16 @@ li {
 .section-bg {
   position: absolute;
   right: 0;
-  bottom: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-size: 100% 100%;
   background-color: black;
   background-position: center center;
   background-size: contain;
   object-fit: cover;
-  z-index: 3;
+  z-index: -1;
 }
 
 .page-section {
