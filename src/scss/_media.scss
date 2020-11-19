@@ -3,8 +3,8 @@
         width: 90%;
     }
 
-    #fp-nav.fp-right {
-        right: 25px;
+    #myMenu {
+        right: 15px;
     }
 
     .popup {
@@ -85,10 +85,21 @@
             display: block;
         }
     }
+    .trust{
+        &__prev-link{
+            bottom: 10px;
+        }
+    }
+    body.fp-viewing-trust{
+        .footer {
+           bottom: 80px;
+       }
+
+    }
 }
 
 @media(max-width: 1350px) {
-    .fp-right {
+    #myMenu{
         display: none;
     }
 

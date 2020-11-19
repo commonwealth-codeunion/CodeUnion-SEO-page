@@ -5,13 +5,30 @@
 <body>
   <div class="preloader">
     <div class="cssload-loader">
-  
       <div class="cssload-inner cssload-one"></div>
       <div class="cssload-inner cssload-two"></div>
       <div class="cssload-inner cssload-three"></div>
     </div>
 
   </div>
+  <ul id="myMenu">
+    <button class="nav-btn section-up">
+      <svg width="20" height="11" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="nav-btn__arrow" d="M19 10L10 1L1 10" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <li data-menuanchor="promotion" class="nav-round active"><a href="#promotion"></a></li>
+    <li data-menuanchor="why" class="nav-round"><a href="#why"></a></li>
+    <li data-menuanchor="services" class="nav-round"><a href="#services"></a></li>
+    <li data-menuanchor="price" class="nav-round"><a href="#price"></a></li>
+    <li data-menuanchor="trust" class="nav-round"><a href="#trust"></a></li>
+    <button class="nav-btn section-down">
+      <svg width="20" height="11" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="nav-btn__arrow" d="M0.999999 1L10 10L19 1" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+
+  </ul>
   <div class="popup">
     <button class="popup__close">
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,20 +40,27 @@
       Оставьте ващи контакты чтобы мы могли связатся с вам!
     </h3>
     <form class="form" action="#">
-      <input class="form__input" type="text" placeholder="Полное имя">
-      <input class="form__input" type="email" placeholder="E-mail">
-      <input class="form__input" id="phone" type="tel" placeholder="Телефон">
+      <div class="form__sending">Отправка данных...</div>
+      <input class="form__input" name="user_name" type="text" placeholder="Полное имя">
+      <input class="form__input" name="user_email" type="email" placeholder="E-mail">
+      <input class="form__input" name="user_phone" id="phone" type="tel" placeholder="Телефон">
       <button class="form__send">Отправить</button>
     </form>
+  </div>
+  <div class="sended">
   </div>
 
   <div class="wrapper">
     @@include('components/_header.html')
     <!-- WRITE CODE HERE -->
-    <video class="section-bg" autoplay="autoplay" loop muted data-autoplay playsinline poster="images/promotion-bg.jpg">
-      <source src="bg-video/1.mp4" type="video/mp4">
-      </source>
-    </video>
+    <div class="video-wrapper">
+      <video class="section-bg" autoplay="autoplay" loop muted data-autoplay playsinline
+        poster="images/promotion-bg.jpg">
+        <source src="bg-video/1.mp4" type="video/mp4">
+        </source>
+      </video>
+
+    </div>
     <div id="fullpage">
 
       <!-- PROMOTION -->

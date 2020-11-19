@@ -107,6 +107,13 @@ li {
   list-style: none;
 }
 // BG VIDEO
+.video-wrapper{
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 200vh;
+  width: 100vw;
+}
 .section-bg {
   position: absolute;
   right: 0;

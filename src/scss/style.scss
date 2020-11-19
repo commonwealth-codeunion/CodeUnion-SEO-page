@@ -15,66 +15,66 @@ body {
 
     &.fp-viewing-price,
     &.fp-viewing-trust {
-        #fp-nav ul li a.active span {
-            background-color: #000;
+        .nav-btn {
+            &__arrow {
+                stroke: #000;
+            }
         }
 
-        #fp-nav ul li:hover a span {
-            background-color: #000;
-        }
-
-        #fp-nav ul li a span {
+        .nav-round {
             border: 1px solid #000;
+
+            &:hover {
+                background-color: #000;
+            }
+
+            &.active {
+                background-color: #000;
+            }
         }
     }
 }
 
-#fp-nav ul li,
-.fp-slidesNav ul li {
-    width: 12px;
-    height: 12px;
-    margin: 0;
-    margin: 72px 0;
-}
-
-#fp-nav.fp-right {
-    margin-top: 21px;
-    right: 172px;
+#myMenu {
+    text-align: center;
+    position: fixed;
+    right: 170px;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 10;
 }
 
-#fp-nav ul li a.active span {
-    height: 12px;
-    width: 12px;
-    margin: 0;
-    border-radius: 100%;
-    background-color: #fff;
+.nav-btn {
+    background-color: transparent;
+    border: none;
+
+    &__arrow {
+        stroke: #fff;
+    }
 }
 
-#fp-nav ul li a.active span,
-#fp-nav ul li:hover a.active span,
-.fp-slidesNav ul li a.active span,
-.fp-slidesNav ul li:hover a.active span,
-#fp-nav ul li:hover a span,
-.fp-slidesNav ul li:hover a span {
+.nav-round {
+    border-radius: 50%;
     width: 12px;
     height: 12px;
-    margin: 0;
-    background-color: #fff;
-}
-
-#fp-nav ul li a {
-    width: 12px;
-    height: 12px;
-
-}
-
-#fp-nav ul li a span {
+    margin: 50px auto;
+    background-color: transparent;
     border: 1px solid #fff;
-    background: transparent;
-    margin: 0;
-    width: 12px;
-    height: 12px;
+    transition: all .3s;
+
+    &:hover {
+        background-color: #fff;
+    }
+
+    &.active {
+        background-color: #fff;
+    }
+
+    a {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+    }
 }
 
 // FULLPAGE NAV
@@ -94,6 +94,34 @@ body {
             filter: blur(31px);
         }
 
+    }
+}
+
+.sended {
+    text-align: center;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 30;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.015em;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -134,6 +162,29 @@ body {
     .form {
         display: flex;
         flex-direction: column;
+        position: relative;
+
+        &__sending {
+            position: absolute;
+            display: flex;
+            padding-top: 30%;
+            color: #fff;
+            font-size: 26px;
+            justify-content: center;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s;
+
+            &.loading {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
 
         &__input {
             padding: 16px 22px;
@@ -143,32 +194,36 @@ body {
             color: #fff;
             font-size: 22px;
             line-height: 128%;
-            
-            &:focus::placeholder{
+
+            &:focus::placeholder {
                 color: transparent;
 
             }
+
             &:focus::-moz-placeholder {
                 color: transparent;
             }
 
-            &::placeholder{
+            &::placeholder {
                 color: #fff;
 
             }
+
             &::-moz-placeholder {
                 color: #fff;
                 opacity: 1;
 
             }
+
             &.wrong {
                 border: 1px solid #FF0000;
                 color: #FF0000;
 
-                &::placeholder{
+                &::placeholder {
                     color: #FF0000;
 
                 }
+
                 &::-moz-placeholder {
                     color: #FF0000;
                     opacity: 1;
@@ -333,6 +388,7 @@ body {
 .promotion {
     position: relative;
     background: transparent;
+
     &__title {
         font-family: 'Roboto', sans-serif;
     }
@@ -443,7 +499,7 @@ body {
         margin-left: 0;
         width: 623px;
     }
-    
+
     .swiper-wrapper {
         cursor: pointer;
         align-items: center;

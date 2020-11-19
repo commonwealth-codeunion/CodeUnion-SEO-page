@@ -10,15 +10,22 @@ const popupClose = document.querySelector('.popup__close');
 const footer = document.querySelector('.footer');
 const form = document.querySelector(".form");
 const validate = document.querySelectorAll(".form__input");
+const formLoading = form.querySelector('.form__sending');
+const formSended = document.querySelector('.sended');
+const sectionUp = document.querySelector('.section-up');
+const sectionDown = document.querySelector('.section-down');
+
 document.addEventListener('DOMContentLoaded', () => {
     preloader.classList.add('loaded');
     document.body.style.overflow = ''
     new fullpage('#fullpage', {
         licenseKey: 'YOUR KEY HERE',
-        navigation: true,
+        menu: '#myMenu',
         anchors: ['promotion', 'why', 'services', 'price', 'trust'],
         normalScrollElements: '.price__items-wrapper, .trust__slider',
     });
+    sectionUp.addEventListener('click', fullpage_api.moveSectionUp())
+    sectionDown.addEventListener('click', fullpage_api.moveSectionDown())
     let servicesSwiper = new Swiper('.services__slider', {
         fadeEffect: {
             crossFade: true
@@ -121,17 +128,76 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-    form.addEventListener('submit', () => {
-        event.preventDefault();
-        let phoneValidate = /([^0-9])/g;
-        if (!validate[0].value) {
-            validate[0].classList.add('wrong');
-        } else if (!validate[1].value) {
-            validate[1].classList.add('wrong');
-        } else if (validate[2].value.replace(phoneValidate, '').length !== 11) {
-            validate[2].classList.add('wrong');
+    let err = 0;
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        formValidate(validate);
+        console.log(err);
+        if (err === 0) {
+            sendForm()
         }
     })
+
+    function formValidate(form) {
+        for (let i = 0; i < form.length; i++) {
+            if (form[i].classList.contains('_email')) {
+                const emailTest = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+                if (emailTest(form[i])) {
+                    form[i].classList.add('wrong');
+                    return err++;
+
+                }
+            } else if (form[i].classList.contains('phone')) {
+                let phoneValidate = /([^0-9])/g;
+                if (phoneValidate(form[i])) {
+                    form[i].classList.add('wrong');
+                    return err++;
+
+                }
+            } else if (!form[i].value) {
+                form[i].classList.add('wrong');
+                return err++;
+
+            }
+            err = 0;
+        }
+    }
+
+    function sendForm() {
+
+        let formData = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', './mail.php');
+        xhr.addEventListener('load', () => {
+            if (Math.floor(xhr.status / 100) !== 2) {
+                console.log(`Error. Status code: ${xhr.status}`, xhr);
+                return;
+            }
+            formSended.textContent = 'Заявка успешно отправлена, с вами свяжутся наши специалист';
+            addFormClasses()
+        });
+        xhr.addEventListener('error', () => {
+            formSended.textContent = 'Что-то пошло не так. Пожалуйста, проверьте ваше соединение и попробуйте отправить снова';
+            addFormClasses()
+        });
+        xhr.send(formData);
+        formLoading.classList.add('loading');
+    }
+
+    function addFormClasses() {
+        popup.classList.remove('active');
+        formLoading.classList.remove('loading');
+        formSended.classList.add('active')
+        wrapper.classList.add('active');
+        form.reset();
+        setTimeout(() => {
+            formSended.classList.remove('active')
+            wrapper.classList.remove('active');
+
+
+        }, 3000)
+    }
     validate.forEach((elem) => {
         elem.addEventListener('click', () => {
             elem.classList.remove('wrong')
