@@ -513,8 +513,8 @@ body {
         align-items: center;
     }
     .swiper-slide{
-        opacity: .5;
-        transition: opacity .7s;
+        opacity: .1;
+        transition: opacity 1s;
     }
     .swiper-slide-active{
         opacity: 1;
