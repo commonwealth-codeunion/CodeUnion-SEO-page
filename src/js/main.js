@@ -32,10 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         fullpage_api.moveSectionDown()
     })
     let servicesSwiper = new Swiper('.services__slider', {
-        fadeEffect: {
-            crossFade: true
-        },
-        effect: "fade",
         speed: 500,
         loop: true,
         spaceBetween: 200,
@@ -55,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         spaceBetween: 108,
         autoplay: {
             delay: 1500,
-            disableOnInteraction: false,
+            disableOnInteraction: true,
         },
         breakpoints: {
             320: {
@@ -175,11 +171,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             formSended.textContent = 'Заявка успешно отправлена, с вами свяжутся наши специалист';
-            addFormClasses()
+            addFormClasses();
         });
         xhr.addEventListener('error', () => {
             formSended.textContent = 'Что-то пошло не так. Пожалуйста, проверьте ваше соединение и попробуйте отправить снова';
-            addFormClasses()
+            addFormClasses();
         });
         xhr.send(formData);
         formLoading.classList.add('loading');
@@ -194,8 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             formSended.classList.remove('active')
             wrapper.classList.remove('active');
-
-
         }, 3000)
     }
 

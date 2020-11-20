@@ -512,7 +512,13 @@ body {
         cursor: pointer;
         align-items: center;
     }
-
+    .swiper-slide{
+        opacity: .5;
+        transition: opacity .7s;
+    }
+    .swiper-slide-active{
+        opacity: 1;
+    }
     .swiper-nav-wrapper {
         display: flex;
         justify-content: space-between;
