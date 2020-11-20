@@ -14,6 +14,7 @@ const formLoading = form.querySelector('.form__sending');
 const formSended = document.querySelector('.sended');
 const sectionUp = document.querySelector('.section-up');
 const sectionDown = document.querySelector('.section-down');
+const sectionBg = document.querySelectorAll('.section-bg');
 
 document.addEventListener('DOMContentLoaded', () => {
     preloader.classList.add('loaded');
@@ -24,8 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
         anchors: ['promotion', 'why', 'services', 'price', 'trust'],
         normalScrollElements: '.price__items-wrapper, .trust__slider',
     });
-    sectionUp.addEventListener('click', fullpage_api.moveSectionUp())
-    sectionDown.addEventListener('click', fullpage_api.moveSectionDown())
+    sectionUp.addEventListener('click', () => {
+        fullpage_api.moveSectionUp()
+    })
+    sectionDown.addEventListener('click', () => {
+        fullpage_api.moveSectionDown()
+    })
     let servicesSwiper = new Swiper('.services__slider', {
         fadeEffect: {
             crossFade: true
@@ -69,36 +74,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     headerBurger.addEventListener('click', () => {
-        headerBurger.classList.toggle('active');
-        headerNav.classList.toggle('active');
-        footer.classList.toggle('active');
+        classlistHandler([footer, headerNav, headerBurger], 'toggle', 'active')
+
     });
     headerNavItem.forEach((elem) => {
         elem.addEventListener('click', () => {
-            headerBurger.classList.remove('active');
-            headerNav.classList.remove('active');
-            footer.classList.remove('active');
+            classlistHandler([footer, headerNav, headerBurger], 'remove', 'active')
         })
     })
     popupBtn.forEach(elem => {
         elem.addEventListener('click', () => {
             event.stopPropagation()
-            popup.classList.toggle('active');
-            wrapper.classList.toggle('active');
+            videoHandler(sectionBg, 'pause');
+            classlistHandler([popup, wrapper], 'toggle', 'active')
             fullpage_api.setAllowScrolling(false);
             fullpage_api.setKeyboardScrolling(false);
         });
     })
     popupClose.addEventListener('click', () => {
-        popup.classList.remove('active');
-        wrapper.classList.remove('active');
+        videoHandler(sectionBg, 'play');
+        classlistHandler([popup, wrapper], 'remove', 'active')
         fullpage_api.setAllowScrolling(true);
         fullpage_api.setKeyboardScrolling(true);
 
     });
     wrapper.addEventListener('click', () => {
-        popup.classList.remove('active');
-        wrapper.classList.remove('active');
+        videoHandler(sectionBg, 'play');
+        classlistHandler([popup, wrapper], 'remove', 'active')
         fullpage_api.setAllowScrolling(true);
         fullpage_api.setKeyboardScrolling(true);
     });
@@ -133,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         formValidate(validate);
-        console.log(err);
         if (err === 0) {
             sendForm()
         }
@@ -197,6 +198,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         }, 3000)
+    }
+
+    function videoHandler(arr, type) {
+        arr.forEach(item => {
+            if (type === "play") {
+                item.play();
+            } else {
+                item.pause();
+            }
+        })
+    }
+
+    function classlistHandler(arr, method, className) {
+        arr.forEach(item => {
+            if (method === 'toggle') {
+
+                item.classList.toggle(className)
+            } else if (method === 'add') {
+                item.classList.add(className)
+            } else {
+                item.classList.remove(className)
+            }
+        })
     }
     validate.forEach((elem) => {
         elem.addEventListener('click', () => {
