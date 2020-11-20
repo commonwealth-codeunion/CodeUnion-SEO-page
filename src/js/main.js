@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         licenseKey: 'YOUR KEY HERE',
         menu: '#myMenu',
         anchors: ['promotion', 'why', 'services', 'price', 'trust'],
-        normalScrollElements: '.trust__slider',
+        normalScrollElements: '.price__items-wrapper, .trust__slider',
     });
     sectionUp.addEventListener('click', () => {
         fullpage_api.moveSectionUp()
