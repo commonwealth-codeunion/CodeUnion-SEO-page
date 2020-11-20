@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         licenseKey: 'YOUR KEY HERE',
         menu: '#myMenu',
         anchors: ['promotion', 'why', 'services', 'price', 'trust'],
-        normalScrollElements: '.price__items-wrapper, .trust__slider',
+        normalScrollElements: '.trust__slider',
     });
     sectionUp.addEventListener('click', () => {
         fullpage_api.moveSectionUp()
@@ -133,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let err = 0;
     form.addEventListener('submit', function (e) {
         e.preventDefault();
-
         formValidate(validate);
         if (err === 0) {
             sendForm()

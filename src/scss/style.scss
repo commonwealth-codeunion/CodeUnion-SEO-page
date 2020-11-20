@@ -22,14 +22,20 @@ body {
         }
 
         .nav-round {
-            border: 1px solid #000;
+            
+            a {
+                border: 1px solid #000;
+                &:hover {
+                    background-color: #000;
+                }
 
-            &:hover {
-                background-color: #000;
             }
 
             &.active {
-                background-color: #000;
+                a{
+                    background-color: #000;
+
+                }
             }
         }
     }
@@ -54,26 +60,28 @@ body {
 }
 
 .nav-round {
-    border-radius: 50%;
-    width: 12px;
-    height: 12px;
     margin: 50px auto;
-    background-color: transparent;
-    border: 1px solid #fff;
-    transition: all .3s;
-
-    &:hover {
-        background-color: #fff;
-    }
 
     &.active {
-        background-color: #fff;
+        a {
+            background-color: #fff;
+
+        }
     }
 
     a {
-        width: 100%;
-        height: 100%;
         display: inline-block;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        background-color: transparent;
+        border: 1px solid #fff;
+        transition: all .3s;
+
+
+        &:hover {
+            background-color: #fff;
+        }
     }
 }
 
@@ -86,7 +94,7 @@ body {
     &.active {
 
         &,
-        &~.fp-right {
+        &~#myMenu {
             -webkit-filter: blur(31px);
             -moz-filter: blur(31px);
             -o-filter: blur(31px);
