@@ -23,32 +23,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = ''
     new fullpage('#fullpage', {
         licenseKey: 'YOUR KEY HERE',
-        afterLoad: function (origin, destination, direction) {
-            // if (destination.anchor == 'why') {
-            //     setTimeout(() => {
-            //         whyBg.style.display = 'block';
-            //         bg.style.display = 'none';
-            //     }, 1000)
-            // }
-            //  else if (destination.anchor == 'promotion') {
-            //     setTimeout(() => {
-            //         whyBg.style.display = 'none';
-            //         bg.style.display = 'block';
-            //     }, 1000)
-            // }
-        },
         onLeave(origin, destination, direction) {
             if (destination.anchor == 'promotion') {
                     whyBg.style.display = 'none';
                     bg.style.display = 'block';
-                    whyBg.currentTime = bg.currentTime += 1;
-                    console.log(whyBg.currentTime);
+                    bg.currentTime = whyBg.currentTime += 1;
+
             }
             else if (origin.anchor == 'promotion' && destination.anchor == 'why') {
                 setTimeout(() => {
                     whyBg.style.display = 'block';
                     bg.style.display = 'none';
-                    bg.currentTime = whyBg.currentTime += 1;
+                    whyBg.currentTime = bg.currentTime += 1;
                 }, 1000)
             }
         },
