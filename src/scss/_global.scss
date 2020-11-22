@@ -108,16 +108,12 @@ li {
 }
 // BG VIDEO
 .video-wrapper{
-  top: 0;
-  left: 0;
-  position: absolute;
-  height: 200vh;
-  width: 100vw;
+  position: relative;
+  z-index: -1;
 }
 .section-bg {
   position: absolute;
   right: 0;
-  top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -128,10 +124,9 @@ li {
   object-fit: cover;
   z-index: -1;
 }
-
 .page-section {
   height: 100%;
-  z-index: 4;
+  z-index: 10;
 }
 
 .container {

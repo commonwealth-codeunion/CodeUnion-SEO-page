@@ -15,12 +15,43 @@ const formSended = document.querySelector('.sended');
 const sectionUp = document.querySelector('.section-up');
 const sectionDown = document.querySelector('.section-down');
 const sectionBg = document.querySelectorAll('.section-bg');
+const whyBg = document.querySelector('.why__bg');
+const bg = document.querySelector('.section-bg');
 
 document.addEventListener('DOMContentLoaded', () => {
     preloader.classList.add('loaded');
     document.body.style.overflow = ''
     new fullpage('#fullpage', {
         licenseKey: 'YOUR KEY HERE',
+        afterLoad: function (origin, destination, direction) {
+            // if (destination.anchor == 'why') {
+            //     setTimeout(() => {
+            //         whyBg.style.display = 'block';
+            //         bg.style.display = 'none';
+            //     }, 1000)
+            // }
+            //  else if (destination.anchor == 'promotion') {
+            //     setTimeout(() => {
+            //         whyBg.style.display = 'none';
+            //         bg.style.display = 'block';
+            //     }, 1000)
+            // }
+        },
+        onLeave(origin, destination, direction) {
+            if (destination.anchor == 'promotion') {
+                    whyBg.style.display = 'none';
+                    bg.style.display = 'block';
+                    whyBg.currentTime = bg.currentTime += 1;
+                    console.log(whyBg.currentTime);
+            }
+            else if (origin.anchor == 'promotion' && destination.anchor == 'why') {
+                setTimeout(() => {
+                    whyBg.style.display = 'block';
+                    bg.style.display = 'none';
+                    bg.currentTime = whyBg.currentTime += 1;
+                }, 1000)
+            }
+        },
         menu: '#myMenu',
         anchors: ['promotion', 'why', 'services', 'price', 'trust'],
         normalScrollElements: '.price__items-wrapper, .trust__slider',
