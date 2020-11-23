@@ -11,13 +11,22 @@
 
 // FULLPAGE NAV
 .iScrollIndicator {
-    background: rgba(256, 256, 256, .5);
+    background: rgba(256, 256, 256, .5) !important;
     border: 0px;
 }
 
 body {
     overflow-x: hidden;
 
+    &.fp-viewing-fp-viewing-1,
+    &.fp-viewing-fp-viewing-2,
+    &.fp-viewing-fp-viewing-3{
+        .section-bg-scroll{
+            opacity: 0;
+            visibility: hidden;
+            transition: all .5s;
+        }
+    }
     &.fp-viewing-fp-viewing-2,
     &.fp-viewing-fp-viewing-3 {
         .nav-btn {
