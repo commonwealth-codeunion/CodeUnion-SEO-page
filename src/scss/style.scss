@@ -410,7 +410,7 @@ body {
         &:hover {
             background-color: #fff;
 
-            .section-scroll__next-path {
+            .promotion__next-path {
                 stroke: #000;
             }
         }
@@ -444,7 +444,33 @@ body {
         max-width: 690px;
         margin-bottom: 58px;
     }
+    &__next {
+        position: absolute;
+        bottom: 90px;
+        background: transparent;
+        border-radius: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 14px 15px 12px 15px;
+        border: 1px solid #FFF;
+        transition: background-color, stroke .3s;
+        z-index: 11;
 
+        &:hover {
+            background-color: #fff;
+
+            .promotion__next-path {
+                stroke: #000;
+            }
+        }
+    }
+    &__next-path {
+        stroke: #fff;
+    }
+
+    &__next-svg {
+        height: 22px;
+    }
 
 }
 

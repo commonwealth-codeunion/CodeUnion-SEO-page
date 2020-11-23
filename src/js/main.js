@@ -17,8 +17,13 @@ const sectionDown = document.querySelector('.section-down');
 const sectionBg = document.querySelectorAll('.section-bg');
 const whyBg = document.querySelector('.why__bg');
 const bg = document.querySelector('.section-bg');
-
+const promotionNext = document.querySelector('.promotion__next');
 document.addEventListener('DOMContentLoaded', () => {
+    promotionNext.addEventListener('click', (e)=>{
+        const scrollbar = document.querySelector('.fp-scroller');
+        e.preventDefault();
+        console.log(scrollbar);
+    });
     preloader.classList.add('loaded');
     document.body.style.overflow = ''
     new fullpage('#fullpage', {
