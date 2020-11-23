@@ -40,11 +40,10 @@
           <path class="nav-btn__arrow" d="M19 10L10 1L1 10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </button>
-      <li data-menuanchor="promotion" class="nav-round active"><a href="#promotion"></a></li>
-      <li data-menuanchor="why" class="nav-round"><a href="#why"></a></li>
-      <li data-menuanchor="services" class="nav-round"><a href="#services"></a></li>
-      <li data-menuanchor="price" class="nav-round"><a href="#price"></a></li>
-      <li data-menuanchor="trust" class="nav-round"><a href="#trust"></a></li>
+      <li data-menuanchor="fp-viewing-0" class="nav-round active"><a href="#fp-viewing-0"></a></li>
+      <li data-menuanchor="fp-viewing-1" class="nav-round"><a href="#fp-viewing-1"></a></li>
+      <li data-menuanchor="fp-viewing-2" class="nav-round"><a href="#fp-viewing-2"></a></li>
+      <li data-menuanchor="fp-viewing-3" class="nav-round"><a href="#fp-viewing-3"></a></li>
       <button class="nav-btn section-down">
         <svg width="20" height="11" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path class="nav-btn__arrow" d="M0.999999 1L10 10L19 1" stroke-linecap="round" stroke-linejoin="round" />
@@ -53,21 +52,15 @@
     </ul>
     @@include('components/_header.html')
     <!-- WRITE CODE HERE -->
-    <!-- <div class="video-wrapper">
-      <video class="section-bg section-bg-main" autoplay="autoplay" loop muted data-autoplay playsinline
-        poster="images/promotion-bg.jpg">
-        <source src="bg-video/1.mp4" type="video/mp4">
-        </source>
-      </video>
-
-    </div> -->
     <div id="fullpage">
-      <div class="section noo-scroll">
-        <video class="section-bg section-bg-scroll" loop muted data-autoplay playsinline poster="images/promotion-bg.jpg">
+      <div class="section section-scroll">
+        <video class="section-bg section-bg-scroll" loop muted data-autoplay playsinline
+          poster="images/promotion-bg.jpg">
           <source src="bg-video/1.mp4" type="video/mp4">
           </source>
         </video>
-        <section class="page-section promotion no-scroll">
+        <!-- PROMOTION -->
+        <section class="page-section promotion section-scroll__item">
           <div class="container">
             <h2 class="title promotion__title">
               SEO Продвижение
@@ -82,19 +75,13 @@
             <button class="main-button promotion__button popup-btn">
               Подробнее
             </button>
-            <a class="promotion__next" href="#why">
-              <svg class="promotion__next-svg" width="22" viewBox="0 0 22 22" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="promotion__next-path promotion__next-arrow"
-                  d="M0.578612 11.0002L10.5786 21.0002L20.5786 11.0002" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path class="promotion__next-path promotion__next-line" d="M10.699 1.00024L10.699 21.0002"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </a>
           </div>
         </section>
-        <section class="page-section promotion why no-scroll" id="why">
+        <!-- PROMOTION -->
+        
+        
+        <!-- WHY -->
+        <section class="page-section promotion why section-scroll__item" id="why">
           <div class="container">
             <h2 class="title promotion__title why__title">
               Зачем нужно SEO продвижение?
@@ -107,31 +94,26 @@
             </button>
           </div>
         </section>
+        <!-- WHY -->
+        <a class="section-scroll__next" href="#fp-viewing-1">
+          <svg class="section-scroll__next-svg" width="22" viewBox="0 0 22 22" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path class="section-scroll__next-path section-scroll__next-arrow"
+              d="M0.578612 11.0002L10.5786 21.0002L20.5786 11.0002" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path class="section-scroll__next-path section-scroll__next-line" d="M10.699 1.00024L10.699 21.0002"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
       </div>
-      <!-- PROMOTION -->
 
-      <!-- PROMOTION -->
-
-
-      <!-- WHY -->
-      <!-- <div class="section">
-        <video class="section-bg why__bg" loop muted data-autoplay playsinline>
-          <source src="bg-video/1.mp4" type="video/mp4">
-          </source>
-        </video>
-        
-
-      </div> -->
-
-      <!-- WHY -->
-      
       <!-- SERVICES -->
       <div class="section">
         <video class="section-bg services__bg" loop muted data-autoplay playsinline>
           <source src="bg-video/2.mp4" type="video/mp4">
           </source>
         </video>
-        <section class="page-section services" id="fp-viewing-0">
+        <section class="page-section services">
           <div class="container">
             <h2 class="title services__title">
               Услуги
@@ -232,7 +214,7 @@
       <!-- PRICE -->
       <div class="section">
 
-        <section class="page-section price">
+        <section class="page-section price" id="price">
           <div class="container">
             <h2 class="title price__title">
               Цены
@@ -346,7 +328,7 @@
                 </div>
               </div>
             </div>
-            <a class="trust__prev-link" href="#promotion">
+            <a class="trust__prev-link" href="#fp-viewing-0">
               <svg class="trust__prev-svg" width="22" viewBox="0 0 22 22" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path class="trust__prev-path trust__prev-arrow" d="M21.4214 11L11.4214 1L1.42139 11"

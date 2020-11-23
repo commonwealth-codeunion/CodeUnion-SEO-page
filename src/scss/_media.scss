@@ -92,7 +92,6 @@
         }
     }
 
-    body.fp-viewing-trust {}
 }
 
 @media(max-width: 1350px) {
@@ -157,8 +156,8 @@
 @media(max-width: 1050px) {
     body {
 
-        &.fp-viewing-price,
-        &.fp-viewing-trust {
+        &.fp-viewing-fp-viewing-2,
+        &.fp-viewing-fp-viewing-3 {
 
             .header {
                 &__burger {
@@ -177,7 +176,7 @@
             }
         }
 
-        &.fp-viewing-trust {
+        &.fp-viewing-fp-viewing-3 {
             .footer {
                 bottom: 20px;
             }

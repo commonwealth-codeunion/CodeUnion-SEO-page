@@ -29,22 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
         animateAnchor: true,
         offsetSections: false,
         verticalCentered: false,
-        onLeave(origin, destination, direction) {
-            if (destination.anchor == 'promotion') {
-                whyBg.style.display = 'none';
-                bg.style.display = 'block';
-                bg.currentTime = whyBg.currentTime += 1;
-
-            } else if (destination.anchor == 'why') {
-                setTimeout(() => {
-                    whyBg.style.display = 'block';
-                    bg.style.display = 'none';
-                    whyBg.currentTime = bg.currentTime += 1;
-                }, 500)
-            }
-        },
         menu: '#myMenu',
-        anchors: ['fp-viewing-0', 'fp-viewing-0', 'fp-viewing-1', 'fp-viewing-2', 'fp-viewing-3'],
+        anchors: ['fp-viewing-0', 'fp-viewing-1', 'fp-viewing-2', 'fp-viewing-3'],
         normalScrollElements: '.price__items-wrapper, .trust__slider',
     });
     sectionUp.addEventListener('click', () => {

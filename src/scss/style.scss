@@ -10,14 +10,16 @@
 //-----------------------------------------------------------------------------------------------------------
 
 // FULLPAGE NAV
-.iScrollLoneScrollbar{
-    background: 256, 256, 256, 1;
+.iScrollIndicator {
+    background: rgba(256, 256, 256, .5);
+    border: 0px;
 }
+
 body {
     overflow-x: hidden;
 
-    &.fp-viewing-fp-viewing-1,
-    &.fp-viewing-fp-viewing-2 {
+    &.fp-viewing-fp-viewing-2,
+    &.fp-viewing-fp-viewing-3 {
         .nav-btn {
             &__arrow {
                 stroke: #000;
@@ -25,9 +27,10 @@ body {
         }
 
         .nav-round {
-            
+
             a {
                 border: 1px solid #000;
+
                 &:hover {
                     background-color: #000;
                 }
@@ -35,7 +38,7 @@ body {
             }
 
             &.active {
-                a{
+                a {
                     background-color: #000;
 
                 }
@@ -349,7 +352,7 @@ body {
 
 
 body {
-    &.fp-viewing-promotion {
+    &.fp-viewing-fp-viewing-0 {
         .header {
             &__nav-item:nth-child(1):after {
                 width: 100%;
@@ -357,15 +360,7 @@ body {
         }
     }
 
-    &.fp-viewing-why {
-        .header {
-            &__nav-item:nth-child(2):after {
-                width: 100%;
-            }
-        }
-    }
-
-    &.fp-viewing-services {
+    &.fp-viewing-fp-viewing-1 {
         .header {
             &__nav-item:nth-child(3):after {
                 width: 100%;
@@ -373,7 +368,7 @@ body {
         }
     }
 
-    &.fp-viewing-price {
+    &.fp-viewing-fp-viewing-2 {
         .header {
             &__nav-item:nth-child(4):after {
                 width: 100%;
@@ -381,7 +376,7 @@ body {
         }
     }
 
-    &.fp-viewing-trust {
+    &.fp-viewing-fp-viewing-3 {
         .header {
             &__nav-item:nth-child(5):after {
                 width: 100%;
@@ -393,6 +388,42 @@ body {
 // LINE
 // HEADER
 
+.section-scroll {
+    position: relative;
+
+    &__item {
+        height: 100vh;
+    }
+
+    &__next {
+        position: fixed;
+        bottom: 90px;
+        background: transparent;
+        border-radius: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 14px 15px 12px 15px;
+        border: 1px solid #FFF;
+        transition: background-color, stroke .3s;
+        z-index: 11;
+
+        &:hover {
+            background-color: #fff;
+
+            .section-scroll__next-path {
+                stroke: #000;
+            }
+        }
+    }
+
+    &__next-path {
+        stroke: #fff;
+    }
+
+    &__next-svg {
+        height: 22px;
+    }
+}
 
 // PROMOTION
 
@@ -414,33 +445,7 @@ body {
         margin-bottom: 58px;
     }
 
-    &__next {
-        position: absolute;
-        bottom: 90px;
-        background: transparent;
-        border-radius: 50%;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 14px 15px 12px 15px;
-        border: 1px solid #FFF;
-        transition: all .3s;
 
-        &:hover {
-            background-color: #fff;
-
-            .promotion__next-path {
-                stroke: #000;
-            }
-        }
-    }
-
-    &__next-path {
-        stroke: #fff;
-    }
-
-    &__next-svg {
-        height: 22px;
-    }
 }
 
 
@@ -450,9 +455,10 @@ body {
 // WHY
 
 .why {
-    &__bg{
+    &__bg {
         display: none;
     }
+
     &__title {
         max-width: 576px;
         margin-bottom: 44px;
@@ -517,13 +523,16 @@ body {
         cursor: pointer;
         align-items: center;
     }
-    .swiper-slide{
+
+    .swiper-slide {
         opacity: .1;
         transition: opacity 1s;
     }
-    .swiper-slide-active{
+
+    .swiper-slide-active {
         opacity: 1;
     }
+
     .swiper-nav-wrapper {
         display: flex;
         justify-content: space-between;
