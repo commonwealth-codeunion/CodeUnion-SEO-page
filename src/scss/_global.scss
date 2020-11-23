@@ -107,12 +107,8 @@ li {
   list-style: none;
 }
 // BG VIDEO
-.video-wrapper{
-  position: relative;
-  z-index: -1;
-}
 .section-bg {
-  position: absolute;
+  position: fixed;
   right: 0;
   left: 0;
   width: 100vw;

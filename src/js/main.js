@@ -25,17 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
         licenseKey: 'YOUR KEY HERE',
         onLeave(origin, destination, direction) {
             if (destination.anchor == 'promotion') {
-                    whyBg.style.display = 'none';
-                    bg.style.display = 'block';
-                    bg.currentTime = whyBg.currentTime += 1;
+                whyBg.style.display = 'none';
+                bg.style.display = 'block';
+                bg.currentTime = whyBg.currentTime += 1;
 
-            }
-            else if (origin.anchor == 'promotion' && destination.anchor == 'why') {
+            } else if (destination.anchor == 'why') {
                 setTimeout(() => {
                     whyBg.style.display = 'block';
                     bg.style.display = 'none';
                     whyBg.currentTime = bg.currentTime += 1;
-                }, 1000)
+                }, 500)
             }
         },
         menu: '#myMenu',

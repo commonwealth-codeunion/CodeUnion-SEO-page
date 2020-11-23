@@ -447,7 +447,9 @@ body {
 // WHY
 
 .why {
-
+    &__bg{
+        display: none;
+    }
     &__title {
         max-width: 576px;
         margin-bottom: 44px;
