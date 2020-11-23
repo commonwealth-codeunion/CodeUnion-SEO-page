@@ -30,21 +30,24 @@ body {
     filter: blur(50px);
     z-index: -1;
   }
-  &.fp-viewing-price{
-    .footer{
+
+  &.fp-viewing-price {
+    .footer {
       bottom: 100px;
       opacity: 0;
       visibility: hidden;
     }
   }
-  &.fp-viewing-services{
-    .section-bg{
+
+  &.fp-viewing-services {
+    .section-bg {
       -webkit-appearance: none;
       appearance: none;
     }
   }
-  &.fp-viewing-price,
-  &.fp-viewing-trust {
+
+  &.fp-viewing-fp-viewing-1,
+  &.fp-viewing-fp-viewing-2 {
 
     .header,
     .footer {
@@ -106,9 +109,10 @@ button {
 li {
   list-style: none;
 }
+
 // BG VIDEO
 .section-bg {
-  position: fixed;
+  position: absolute;
   right: 0;
   left: 0;
   width: 100vw;
@@ -119,10 +123,6 @@ li {
   background-size: contain;
   object-fit: cover;
   z-index: -1;
-}
-.page-section {
-  height: 100%;
-  z-index: 10;
 }
 
 .container {
@@ -150,10 +150,24 @@ li {
   }
 }
 
+.noo-scroll {
+  position: relative;
+  .section-bg{
+    top: 0;
+    position: fixed;
+  }
+}
+
 .page-section {
-  height: -webkit-fill-available;
+  position: relative;
   display: flex;
   align-items: center;
+  z-index: 10;
+  height: 100%;
+}
+
+.no-scroll {
+  height: 100vh;
 }
 
 .title {

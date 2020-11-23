@@ -10,11 +10,14 @@
 //-----------------------------------------------------------------------------------------------------------
 
 // FULLPAGE NAV
+.iScrollLoneScrollbar{
+    background: 256, 256, 256, 1;
+}
 body {
     overflow-x: hidden;
 
-    &.fp-viewing-price,
-    &.fp-viewing-trust {
+    &.fp-viewing-fp-viewing-1,
+    &.fp-viewing-fp-viewing-2 {
         .nav-btn {
             &__arrow {
                 stroke: #000;

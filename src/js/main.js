@@ -23,6 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = ''
     new fullpage('#fullpage', {
         licenseKey: 'YOUR KEY HERE',
+        css3: true,
+        fitToSection: true,
+        scrollOverflow: true,
+        animateAnchor: true,
+        offsetSections: false,
+        verticalCentered: false,
         onLeave(origin, destination, direction) {
             if (destination.anchor == 'promotion') {
                 whyBg.style.display = 'none';
@@ -38,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         },
         menu: '#myMenu',
-        anchors: ['promotion', 'why', 'services', 'price', 'trust'],
+        anchors: ['fp-viewing-0', 'fp-viewing-0', 'fp-viewing-1', 'fp-viewing-2', 'fp-viewing-3'],
         normalScrollElements: '.price__items-wrapper, .trust__slider',
     });
     sectionUp.addEventListener('click', () => {

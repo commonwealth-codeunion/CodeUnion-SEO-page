@@ -113,6 +113,7 @@ gulp.task("script", function () {
 		.src([
 			//тут подключаем разные js в общую библиотеку. Отключите то, что вам не нужно.
 			"node_modules/swiper/swiper-bundle.min.js",
+			"node_modules/fullpage.js/vendors/scrolloverflow.js",
 			"node_modules/fullpage.js/dist/fullpage.min.js",
 		])
 		.pipe(size())

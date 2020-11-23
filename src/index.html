@@ -53,22 +53,21 @@
     </ul>
     @@include('components/_header.html')
     <!-- WRITE CODE HERE -->
-    <div class="video-wrapper">
+    <!-- <div class="video-wrapper">
       <video class="section-bg section-bg-main" autoplay="autoplay" loop muted data-autoplay playsinline
         poster="images/promotion-bg.jpg">
         <source src="bg-video/1.mp4" type="video/mp4">
         </source>
       </video>
 
-    </div>
+    </div> -->
     <div id="fullpage">
-      <!-- PROMOTION -->
-      <div class="section">
-        <!-- <video class="section-bg" loop muted data-autoplay playsinline poster="images/promotion-bg.jpg">
+      <div class="section noo-scroll">
+        <video class="section-bg section-bg-scroll" loop muted data-autoplay playsinline poster="images/promotion-bg.jpg">
           <source src="bg-video/1.mp4" type="video/mp4">
           </source>
-        </video> -->
-        <section class="page-section promotion">
+        </video>
+        <section class="page-section promotion no-scroll">
           <div class="container">
             <h2 class="title promotion__title">
               SEO Продвижение
@@ -95,19 +94,7 @@
             </a>
           </div>
         </section>
-
-      </div>
-
-      <!-- PROMOTION -->
-
-
-      <!-- WHY -->
-      <div class="section">
-        <video class="section-bg why__bg" loop muted data-autoplay playsinline>
-          <source src="bg-video/1.mp4" type="video/mp4">
-          </source>
-        </video>
-        <section class="page-section promotion why">
+        <section class="page-section promotion why no-scroll" id="why">
           <div class="container">
             <h2 class="title promotion__title why__title">
               Зачем нужно SEO продвижение?
@@ -120,8 +107,21 @@
             </button>
           </div>
         </section>
-
       </div>
+      <!-- PROMOTION -->
+
+      <!-- PROMOTION -->
+
+
+      <!-- WHY -->
+      <!-- <div class="section">
+        <video class="section-bg why__bg" loop muted data-autoplay playsinline>
+          <source src="bg-video/1.mp4" type="video/mp4">
+          </source>
+        </video>
+        
+
+      </div> -->
 
       <!-- WHY -->
       
@@ -131,7 +131,7 @@
           <source src="bg-video/2.mp4" type="video/mp4">
           </source>
         </video>
-        <section class="page-section services">
+        <section class="page-section services" id="fp-viewing-0">
           <div class="container">
             <h2 class="title services__title">
               Услуги
