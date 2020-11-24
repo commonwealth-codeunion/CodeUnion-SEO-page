@@ -1,6 +1,6 @@
 @media(max-width: 1650px) {
     .container {
-        width: 90%;
+        width: 85%;
     }
 
     #myMenu {
@@ -95,6 +95,9 @@
 }
 
 @media(max-width: 1350px) {
+    .container{
+        width: 90%;
+    }
     #myMenu {
         display: none;
     }

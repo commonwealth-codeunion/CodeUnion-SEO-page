@@ -1,48 +1,50 @@
-const preloader = document.querySelector('.preloader');
-const headerBurger = document.querySelector('.header__burger');
-const headerNav = document.querySelector('.header__nav');
-const headerNavItem = document.querySelectorAll('.header__nav-item');
-const inputPhone = document.querySelector('#phone');
-const wrapper = document.querySelector('.wrapper');
-const popupBtn = document.querySelectorAll('.popup-btn');
-const popup = document.querySelector('.popup');
-const popupClose = document.querySelector('.popup__close');
-const footer = document.querySelector('.footer');
-const form = document.querySelector(".form");
-const validate = document.querySelectorAll(".form__input");
-const formLoading = form.querySelector('.form__sending');
-const formSended = document.querySelector('.sended');
-const sectionUp = document.querySelector('.section-up');
-const sectionDown = document.querySelector('.section-down');
-const sectionBg = document.querySelectorAll('.section-bg');
-const whyBg = document.querySelector('.why__bg');
-const bg = document.querySelector('.section-bg-main');
-const promotionNext = document.querySelector('.promotion__next');
+const preloader = document.querySelector('.preloader'),
+    headerBurger = document.querySelector('.header__burger'),
+    headerNav = document.querySelector('.header__nav'),
+    headerNavItem = document.querySelectorAll('.header__nav-item'),
+    inputPhone = document.querySelector('#phone'),
+    wrapper = document.querySelector('.wrapper'),
+    popupBtn = document.querySelectorAll('.popup-btn'),
+    popup = document.querySelector('.popup'),
+    popupClose = document.querySelector('.popup__close'),
+    footer = document.querySelector('.footer'),
+    form = document.querySelector(".form"),
+    validate = document.querySelectorAll(".form__input"),
+    formLoading = form.querySelector('.form__sending'),
+    formSended = document.querySelector('.sended'),
+    sectionUp = document.querySelector('.section-up'),
+    sectionDown = document.querySelector('.section-down'),
+    sectionBg = document.querySelectorAll('.section-bg'),
+    whyBg = document.querySelector('.why__bg'),
+    bg = document.querySelector('.section-bg-main'),
+    promotionNext = document.querySelector('.promotion__next');
+let isPlaying = true;
+
 document.addEventListener('DOMContentLoaded', () => {
     preloader.classList.add('loaded');
     document.body.style.overflow = ''
     $('#fullpage').fullpage({
-		//options here
+        //options here
         menu: '#myMenu',
         normalScrollElements: '.price__items-wrapper, .trust__slider',
         anchors: ['promotion', 'why', 'services', 'price', 'trust'],
         onLeave(index, nextIndex, direction) {
             if (nextIndex === 1) {
-                console.log(123);
                 whyBg.style.display = 'none';
                 bg.style.display = 'block';
-                bg.currentTime = whyBg.currentTime += 1;
+                bg.currentTime = whyBg.currentTime;
 
             } else if (nextIndex === 2) {
-                console.log(bg);
                 setTimeout(() => {
                     whyBg.style.display = 'block';
                     bg.style.display = 'none';
-                    whyBg.currentTime = bg.currentTime += 1;
+                    whyBg.currentTime = bg.currentTime;
                 }, 700)
+            } else {
+                videoHandler(sectionBg, 'pause')
             }
         },
-	});
+    });
     sectionUp.addEventListener('click', () => {
         $.fn.fullpage.moveSectionUp()
     })
@@ -212,13 +214,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function videoHandler(arr, type) {
-        arr.forEach(item => {
-            if (type === "play") {
-                item.play();
-            } else {
-                item.pause();
-            }
-        })
+        setTimeout(function () {    
+            arr.forEach(item => {
+                if (type === "play") {
+                    item.play();
+                } else {
+                    item.pause();
+                }
+            })
+         }, 150);
     }
 
     function classlistHandler(arr, method, className) {
