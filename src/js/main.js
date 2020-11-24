@@ -16,31 +16,32 @@ const sectionUp = document.querySelector('.section-up');
 const sectionDown = document.querySelector('.section-down');
 const sectionBg = document.querySelectorAll('.section-bg');
 const whyBg = document.querySelector('.why__bg');
-const bg = document.querySelector('.section-bg');
+const bg = document.querySelector('.section-bg-main');
 const promotionNext = document.querySelector('.promotion__next');
 document.addEventListener('DOMContentLoaded', () => {
-    promotionNext.addEventListener('click', (e) => {
-        const scrollbar = document.querySelector('.fp-scroller');
-        e.preventDefault();
-        console.log(window.innerHeight);
-        scrollbar.style.transform = `translate(0px, ${window.innerHeight}px) translateZ(0px);`
-        scrollbar.style.transform = `rotate(90deg)`
-        console.log(scrollbar);
-    });
     preloader.classList.add('loaded');
     document.body.style.overflow = ''
     $('#fullpage').fullpage({
 		//options here
-		autoScrolling:true,
-        scrollHorizontally: true,
-        css3: true,
-        scrollOverflow: true,
-        animateAnchor: true,
-        offsetSections: false,
-        verticalCentered: false,
         menu: '#myMenu',
         normalScrollElements: '.price__items-wrapper, .trust__slider',
-        anchors: ['fp-viewing-0', 'fp-viewing-1', 'fp-viewing-2', 'fp-viewing-3'],
+        anchors: ['promotion', 'why', 'services', 'price', 'trust'],
+        onLeave(index, nextIndex, direction) {
+            if (nextIndex === 1) {
+                console.log(123);
+                whyBg.style.display = 'none';
+                bg.style.display = 'block';
+                bg.currentTime = whyBg.currentTime += 1;
+
+            } else if (nextIndex === 2) {
+                console.log(bg);
+                setTimeout(() => {
+                    whyBg.style.display = 'block';
+                    bg.style.display = 'none';
+                    whyBg.currentTime = bg.currentTime += 1;
+                }, 700)
+            }
+        },
 	});
     sectionUp.addEventListener('click', () => {
         $.fn.fullpage.moveSectionUp()

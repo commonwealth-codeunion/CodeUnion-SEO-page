@@ -10,10 +10,6 @@
 //-----------------------------------------------------------------------------------------------------------
 
 // FULLPAGE NAV
-.iScrollIndicator {
-    background: rgba(256, 256, 256, .5) !important;
-    border: 0px;
-}
 
 body {
     overflow-x: hidden;
@@ -28,8 +24,8 @@ body {
         }
     }
 
-    &.fp-viewing-fp-viewing-2,
-    &.fp-viewing-fp-viewing-3 {
+    &.fp-viewing-price,
+    &.fp-viewing-trust {
         .nav-btn {
             &__arrow {
                 stroke: #000;
@@ -367,7 +363,7 @@ body {
 
 
 body {
-    &.fp-viewing-fp-viewing-0 {
+    &.fp-viewing-promotion {
         .header {
             &__nav-item:nth-child(1):after {
                 width: 100%;
@@ -375,7 +371,15 @@ body {
         }
     }
 
-    &.fp-viewing-fp-viewing-1 {
+    &.fp-viewing-why {
+        .header {
+            &__nav-item:nth-child(2):after {
+                width: 100%;
+            }
+        }
+    }
+
+    &.fp-viewing-services {
         .header {
             &__nav-item:nth-child(3):after {
                 width: 100%;
@@ -383,15 +387,14 @@ body {
         }
     }
 
-    &.fp-viewing-fp-viewing-2 {
+    &.fp-viewing-price {
         .header {
             &__nav-item:nth-child(4):after {
                 width: 100%;
             }
         }
     }
-
-    &.fp-viewing-fp-viewing-3 {
+    &.fp-viewing-trust {
         .header {
             &__nav-item:nth-child(5):after {
                 width: 100%;
@@ -402,43 +405,6 @@ body {
 
 // LINE
 // HEADER
-
-.section-scroll {
-    position: relative;
-
-    &__item {
-        height: 100vh;
-    }
-
-    &__next {
-        position: fixed;
-        bottom: 90px;
-        background: transparent;
-        border-radius: 50%;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 14px 15px 12px 15px;
-        border: 1px solid #FFF;
-        transition: background-color, stroke .3s;
-        z-index: 11;
-
-        &:hover {
-            background-color: #fff;
-
-            .promotion__next-path {
-                stroke: #000;
-            }
-        }
-    }
-
-    &__next-path {
-        stroke: #fff;
-    }
-
-    &__next-svg {
-        height: 22px;
-    }
-}
 
 // PROMOTION
 
@@ -466,7 +432,7 @@ body {
         transform: translateX(-50%);
         padding: 14px 15px 12px 15px;
         border: 1px solid #FFF;
-        transition: background-color, stroke .3s;
+        transition: all .3s;
         z-index: 11;
 
         &:hover {
@@ -496,6 +462,7 @@ body {
 
 .why {
     &__bg {
+        position: absolute;
         display: none;
     }
 

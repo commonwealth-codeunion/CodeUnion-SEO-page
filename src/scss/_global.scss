@@ -30,12 +30,8 @@ body {
     filter: blur(50px);
     z-index: -1;
   }
-  &.fp-viewing-fp-viewing-0{
-    .header,.footer{
-      background-color: rgba(0, 0, 0, .5);
-    }
-  }
-  &.fp-viewing-fp-viewing-2 {
+
+  &.fp-viewing-price{
     .footer {
       bottom: 100px;
       opacity: 0;
@@ -43,15 +39,15 @@ body {
     }
   }
 
-  &.fp-viewing-fp-viewing-1 {
+  &.fp-viewing-services {
     .section-bg {
       -webkit-appearance: none;
       appearance: none;
     }
   }
 
-  &.fp-viewing-fp-viewing-2,
-  &.fp-viewing-fp-viewing-3 {
+  &.fp-viewing-price,
+  &.fp-viewing-trust {
 
     .header,
     .footer {
@@ -74,7 +70,7 @@ body {
     }
   }
 
-  &.fp-viewing-fp-viewing-3 {
+  &.fp-viewing-trust {
     .footer {
       bottom: 100px;
     }

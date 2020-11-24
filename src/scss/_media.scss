@@ -156,8 +156,8 @@
 @media(max-width: 1050px) {
     body {
 
-        &.fp-viewing-fp-viewing-2,
-        &.fp-viewing-fp-viewing-3 {
+        &.fp-viewing-price,
+        &.fp-viewing-trust {
 
             .header {
                 &__burger {
@@ -176,7 +176,7 @@
             }
         }
 
-        &.fp-viewing-fp-viewing-3 {
+        &.fp-viewing-trust {
             .footer {
                 bottom: 20px;
             }
@@ -242,8 +242,9 @@
             border: none;
             background-color: transparent;
             height: 20px;
+            -moz-height: 18px;
             display: block;
-
+            padding: 1px 10px;
             &.active {
                 span {
                     &::before {
