@@ -42,17 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         normalScrollElements: '.price__items-wrapper, .trust__slider',
         anchors: ['fp-viewing-0', 'fp-viewing-1', 'fp-viewing-2', 'fp-viewing-3'],
 	});
-    // new fullpage('#fullpage', {
-    //     css3: true,
-    //     fitToSection: true,
-    //     scrollOverflow: true,
-    //     animateAnchor: true,
-    //     offsetSections: false,
-    //     verticalCentered: false,
-    //     menu: '#myMenu',
-    //     anchors: ['fp-viewing-0', 'fp-viewing-1', 'fp-viewing-2', 'fp-viewing-3'],
-    //     normalScrollElements: '.price__items-wrapper, .trust__slider',
-    // });
     sectionUp.addEventListener('click', () => {
         $.fn.fullpage.moveSectionUp()
     })
