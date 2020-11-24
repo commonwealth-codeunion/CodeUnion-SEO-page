@@ -19,30 +19,45 @@ const whyBg = document.querySelector('.why__bg');
 const bg = document.querySelector('.section-bg');
 const promotionNext = document.querySelector('.promotion__next');
 document.addEventListener('DOMContentLoaded', () => {
-    promotionNext.addEventListener('click', (e)=>{
+    promotionNext.addEventListener('click', (e) => {
         const scrollbar = document.querySelector('.fp-scroller');
         e.preventDefault();
+        console.log(window.innerHeight);
+        scrollbar.style.transform = `translate(0px, ${window.innerHeight}px) translateZ(0px);`
+        scrollbar.style.transform = `rotate(90deg)`
         console.log(scrollbar);
     });
     preloader.classList.add('loaded');
     document.body.style.overflow = ''
-    new fullpage('#fullpage', {
-        licenseKey: 'YOUR KEY HERE',
+    $('#fullpage').fullpage({
+		//options here
+		autoScrolling:true,
+        scrollHorizontally: true,
         css3: true,
-        fitToSection: true,
         scrollOverflow: true,
         animateAnchor: true,
         offsetSections: false,
         verticalCentered: false,
         menu: '#myMenu',
-        anchors: ['fp-viewing-0', 'fp-viewing-1', 'fp-viewing-2', 'fp-viewing-3'],
         normalScrollElements: '.price__items-wrapper, .trust__slider',
-    });
+        anchors: ['fp-viewing-0', 'fp-viewing-1', 'fp-viewing-2', 'fp-viewing-3'],
+	});
+    // new fullpage('#fullpage', {
+    //     css3: true,
+    //     fitToSection: true,
+    //     scrollOverflow: true,
+    //     animateAnchor: true,
+    //     offsetSections: false,
+    //     verticalCentered: false,
+    //     menu: '#myMenu',
+    //     anchors: ['fp-viewing-0', 'fp-viewing-1', 'fp-viewing-2', 'fp-viewing-3'],
+    //     normalScrollElements: '.price__items-wrapper, .trust__slider',
+    // });
     sectionUp.addEventListener('click', () => {
-        fullpage_api.moveSectionUp()
+        $.fn.fullpage.moveSectionUp()
     })
     sectionDown.addEventListener('click', () => {
-        fullpage_api.moveSectionDown()
+        $.fn.fullpage.moveSectionDown()
     })
     let servicesSwiper = new Swiper('.services__slider', {
         speed: 500,
@@ -96,22 +111,22 @@ document.addEventListener('DOMContentLoaded', () => {
             event.stopPropagation()
             videoHandler(sectionBg, 'pause');
             classlistHandler([popup, wrapper], 'toggle', 'active')
-            fullpage_api.setAllowScrolling(false);
-            fullpage_api.setKeyboardScrolling(false);
+            $.fn.fullpage.setAllowScrolling(false);
+            $.fn.fullpage.setKeyboardScrolling(false);
         });
     })
     popupClose.addEventListener('click', () => {
         videoHandler(sectionBg, 'play');
         classlistHandler([popup, wrapper], 'remove', 'active')
-        fullpage_api.setAllowScrolling(true);
-        fullpage_api.setKeyboardScrolling(true);
+        $.fn.fullpage.setAllowScrolling(true);
+        $.fn.fullpage.setKeyboardScrolling(true);
 
     });
     wrapper.addEventListener('click', () => {
         videoHandler(sectionBg, 'play');
         classlistHandler([popup, wrapper], 'remove', 'active')
-        fullpage_api.setAllowScrolling(true);
-        fullpage_api.setKeyboardScrolling(true);
+        $.fn.fullpage.setAllowScrolling(true);
+        $.fn.fullpage.setKeyboardScrolling(true);
     });
     inputPhone.addEventListener('keydown', function (event) {
         if (!(event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Backspace' || event.key == 'Tab')) {
@@ -183,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(`Error. Status code: ${xhr.status}`, xhr);
                 return;
             }
-            formSended.textContent = 'Заявка успешно отправлена, с вами свяжутся наши специалист';
+            formSended.textContent = 'Заявка успешно отправлена, с вами свяжется наши специалист';
             addFormClasses();
         });
         xhr.addEventListener('error', () => {
