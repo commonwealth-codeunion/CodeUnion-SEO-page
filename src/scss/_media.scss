@@ -8,11 +8,11 @@
     }
 
     .popup {
-        padding: 60px 40px 70px;
-        max-width: 500px;
+        padding: 50px 50px 50px;
+        max-width: 450px;
 
         &__close {
-            top: 15px;
+            top: 20px;
             right: 15px;
         }
 
@@ -24,13 +24,14 @@
         .form {
 
             &__input {
-                margin-bottom: 30px;
-                font-size: 22px;
+                margin-bottom: 20px;
+                font-size: 20px;
+                padding: 14px 20px;
             }
 
             &__send {
-                padding: 16px 50px;
-                font-size: 22px;
+                padding: 14px 50px;
+                font-size: 20px;
             }
         }
     }

@@ -32,16 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
             if (nextIndex === 1) {
                 whyBg.style.display = 'none';
                 bg.style.display = 'block';
-                bg.currentTime = whyBg.currentTime;
+                setTimeout(() => {
+                    videoHandler(sectionBg, 'play')
+                    bg.currentTime = whyBg.currentTime;
+                }, 150)
 
             } else if (nextIndex === 2) {
                 setTimeout(() => {
+                    videoHandler(sectionBg, 'play')
                     whyBg.style.display = 'block';
                     bg.style.display = 'none';
                     whyBg.currentTime = bg.currentTime;
                 }, 700)
             } else {
-                videoHandler(sectionBg, 'pause')
+                setTimeout(() => {
+                    videoHandler(sectionBg, 'pause')
+                    bg.style.display = 'none';
+                }, 150)
             }
         },
     });
@@ -214,15 +221,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function videoHandler(arr, type) {
-        setTimeout(function () {    
+        setTimeout(function () {
             arr.forEach(item => {
                 if (type === "play") {
-                    item.play();
+                    if (!isPlaying) {
+                        item.play();
+                    }
+                    isPlaying = true;
                 } else {
-                    item.pause();
+                    if (isPlaying) {
+                        item.pause();
+                        isPlaying = false;
+                    }
                 }
             })
-         }, 150);
+        }, 0);
     }
 
     function classlistHandler(arr, method, className) {

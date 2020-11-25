@@ -13,7 +13,6 @@
 
 body {
     overflow-x: hidden;
-
     &.fp-viewing-fp-viewing-1,
     &.fp-viewing-fp-viewing-2,
     &.fp-viewing-fp-viewing-3 {
@@ -161,9 +160,10 @@ body {
     &.active {
         opacity: 1;
         visibility: visible;
-
     }
-
+    &.active ~ .footer{
+        bottom: 40px;
+    }
     &__close {
         top: 36px;
         right: 36px;
@@ -187,10 +187,10 @@ body {
         &__sending {
             position: absolute;
             display: flex;
-            padding-top: 30%;
             color: #fff;
             font-size: 26px;
             justify-content: center;
+            align-items: center;
             top: 0;
             right: -10px;
             bottom: 0;
@@ -533,7 +533,7 @@ body {
 
     .swiper-slide {
         opacity: .1;
-        transition: opacity 1s;
+        transition: all 1s;
     }
 
     .swiper-slide-active {
