@@ -41,12 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
         onLeave(index, nextIndex, direction) {
             if (nextIndex === 1) {
                 if (whyBgSource.src.length > 10 && bgSource.src.length > 10) {
-                    console.log(whyBgSource.src.length);
                     whyBg.style.display = 'none';
                     bg.style.display = 'block';
                     setTimeout(() => {
-                        videoHandler(sectionBg, 'play')
                         bg.currentTime = whyBg.currentTime;
+                        videoHandler(sectionBg, 'play')
                     }, 150)
 
                 }
@@ -54,10 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (nextIndex === 2) {
                 if (whyBgSource.src.length > 5 && bgSource.src.length > 5) {
                     setTimeout(() => {
-                        videoHandler(sectionBg, 'play')
+                        whyBg.currentTime = bg.currentTime;
                         whyBg.style.display = 'block';
                         bg.style.display = 'none';
-                        whyBg.currentTime = bg.currentTime;
+                        videoHandler(sectionBg, 'play')
                     }, 700)
 
                 }
@@ -89,10 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
     let trustSwiper = new Swiper('.trust__slider', {
-        slidesPerView: 3,
         speed: 600,
         loop: true,
-        spaceBetween: 108,
         autoplay: {
             delay: 1500,
             disableOnInteraction: true,
