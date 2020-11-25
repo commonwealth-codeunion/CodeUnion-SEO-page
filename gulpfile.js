@@ -98,7 +98,7 @@ gulp.task("style", function () {
 		.src([
 			//указываем, где брать исходники
 			"node_modules/normalize.css/normalize.css",
-			"node_modules/swiper/swiper-bundle.min.css",
+			"node_modules/swiper/swiper.min.css",
 			"node_modules/fullpage.js/dist/jquery.fullpage.min.css",
 		])
 		.pipe(concat("libs.min.css")) //склеиваем их в один файл с указанным именем
@@ -114,7 +114,7 @@ gulp.task("script", function () {
 			//тут подключаем разные js в общую библиотеку. Отключите то, что вам не нужно.
 			"node_modules/jquery/dist/jquery.min.js",
 			"node_modules/fullpage.js/dist/jquery.fullpage.min.js",
-			"node_modules/swiper/swiper-bundle.min.js",
+			"node_modules/swiper/swiper.min.js",
 			// "node_modules/fullpage.js/dist/jquery.fullpage.min.js", jquery.fullpage.extensions.min.js
 		])
 		.pipe(size())
