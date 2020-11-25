@@ -430,6 +430,9 @@
     }
 
     .services {
+        .swiper-pagination{
+            top: 8%;
+        }
         &__title {
             margin-bottom: 25px;
             text-align: center;

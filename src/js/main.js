@@ -15,16 +15,16 @@ const preloader = document.querySelector('.preloader'),
     sectionUp = document.querySelector('.section-up'),
     sectionDown = document.querySelector('.section-down'),
     sectionBg = document.querySelectorAll('.section-bg'),
-    whyBg = document.querySelector('.why__bg'),
+    servicesBg = document.querySelector('.services__bg'),
     bg = document.querySelector('.section-bg-main'),
     promotionNext = document.querySelector('.promotion__next'),
-    whyBgSource = whyBg.querySelector('source'),
+    servicesBgSource = servicesBg.querySelector('source'),
     bgSource = bg.querySelector('source');
 let isPlaying = true;
 
 function checkWidth() {
     if (window.innerWidth <= 1025) {
-        whyBgSource.src = '//:0';
+        servicesBgSource.src = '//:0';
         bgSource.src = '//:0';
         videoHandler(sectionBg, 'pause')
     }
@@ -39,32 +39,37 @@ document.addEventListener('DOMContentLoaded', () => {
         normalScrollElements: '.price__items-wrapper, .trust__slider',
         anchors: ['promotion', 'why', 'services', 'price', 'trust'],
         onLeave(index, nextIndex, direction) {
-            if (nextIndex === 1) {
-                if (whyBgSource.src.length > 10 && bgSource.src.length > 10) {
-                    whyBg.style.display = 'none';
+            if (servicesBgSource.src.length > 10 && bgSource.src.length > 10) {
+                if (nextIndex === 1) {
+                    servicesBg.style.display = 'none';
                     bg.style.display = 'block';
                     setTimeout(() => {
-                        bg.currentTime = whyBg.currentTime;
                         videoHandler(sectionBg, 'play')
                     }, 150)
-
-                }
-
-            } else if (nextIndex === 2) {
-                if (whyBgSource.src.length > 5 && bgSource.src.length > 5) {
+                } else if (nextIndex === 2) {
+                    servicesBg.style.display = 'none';
+                    bg.style.display = 'block';
                     setTimeout(() => {
-                        whyBg.currentTime = bg.currentTime;
-                        whyBg.style.display = 'block';
-                        bg.style.display = 'none';
                         videoHandler(sectionBg, 'play')
+                    }, 150)
+                    if(index === 3){
+                        bg.currentTime = (servicesBg.currentTime);
+                    }
+                } else if (nextIndex === 3) {
+                    setTimeout(() => {
+                        bg.style.display = 'none';
+                        servicesBg.style.display = 'block';
+                        servicesBg.play();
                     }, 700)
+                    servicesBg.currentTime = (bg.currentTime + 0.7);
 
+                } else {
+                    setTimeout(() => {
+                        videoHandler(sectionBg, 'pause')
+                        bg.style.display = 'none';
+                        servicesBg.style.display = 'block';
+                    }, 150)
                 }
-            } else {
-                setTimeout(() => {
-                    videoHandler(sectionBg, 'pause')
-                    bg.style.display = 'none';
-                }, 150)
             }
         },
     });
@@ -90,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let trustSwiper = new Swiper('.trust__slider', {
         speed: 600,
         loop: true,
+        slidesPerView: 3,
+        spaceBetween: 108,
         autoplay: {
             delay: 1500,
             disableOnInteraction: true,

@@ -483,7 +483,9 @@ body {
 
 .services {
     position: relative;
-
+    &__bg{
+        display: none;
+    }
     &__title {
         margin-bottom: 57px;
     }
@@ -549,6 +551,7 @@ body {
         left: 50%;
         transform: translateX(-50%);
         width: auto;
+        height: 100%;
     }
     .swiper-button-prev,
     .swiper-button-next {
