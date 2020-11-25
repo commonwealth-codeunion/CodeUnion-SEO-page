@@ -296,12 +296,26 @@
     }
 
     .promotion {
+        background-color: #000;
+        background-position: center -10vh;
+        background-repeat: no-repeat;
+        background-size: 90%;
+        background-image: url('../images/promotion-bg2.jpg');
         &__paragraph {
             max-width: 100%;
         }
 
     }
-
+    .why{
+        background-color: #000;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: 60%;
+        background-image: url('../images/why-bg-mobile.jpg');
+        &__bg{
+            display: none !important;
+        }
+    }
     .services {
 
         .swiper-container {
@@ -559,7 +573,14 @@
     .subtitle {
         font-size: 14px;
     }
-
+    .promotion{
+        background-position-y: -2vh;
+        background-size: 100%;
+    }
+    .why{
+        background-position-y: bottom;
+        background-size: 80%;
+    }
     .services {
 
         .services__subtitle {

@@ -17,9 +17,19 @@ const preloader = document.querySelector('.preloader'),
     sectionBg = document.querySelectorAll('.section-bg'),
     whyBg = document.querySelector('.why__bg'),
     bg = document.querySelector('.section-bg-main'),
-    promotionNext = document.querySelector('.promotion__next');
+    promotionNext = document.querySelector('.promotion__next'),
+    whyBgSource = whyBg.querySelector('source'),
+    bgSource = bg.querySelector('source');
 let isPlaying = true;
 
+function checkWidth() {
+    if (window.innerWidth <= 1025) {
+        whyBgSource.src = '//:0';
+        bgSource.src = '//:0';
+        videoHandler(sectionBg, 'pause')
+    }
+}
+checkWidth()
 document.addEventListener('DOMContentLoaded', () => {
     preloader.classList.add('loaded');
     document.body.style.overflow = ''
@@ -30,20 +40,27 @@ document.addEventListener('DOMContentLoaded', () => {
         anchors: ['promotion', 'why', 'services', 'price', 'trust'],
         onLeave(index, nextIndex, direction) {
             if (nextIndex === 1) {
-                whyBg.style.display = 'none';
-                bg.style.display = 'block';
-                setTimeout(() => {
-                    videoHandler(sectionBg, 'play')
-                    bg.currentTime = whyBg.currentTime;
-                }, 150)
+                if (whyBgSource.src.length > 10 && bgSource.src.length > 10) {
+                    console.log(whyBgSource.src.length);
+                    whyBg.style.display = 'none';
+                    bg.style.display = 'block';
+                    setTimeout(() => {
+                        videoHandler(sectionBg, 'play')
+                        bg.currentTime = whyBg.currentTime;
+                    }, 150)
+
+                }
 
             } else if (nextIndex === 2) {
-                setTimeout(() => {
-                    videoHandler(sectionBg, 'play')
-                    whyBg.style.display = 'block';
-                    bg.style.display = 'none';
-                    whyBg.currentTime = bg.currentTime;
-                }, 700)
+                if (whyBgSource.src.length > 5 && bgSource.src.length > 5) {
+                    setTimeout(() => {
+                        videoHandler(sectionBg, 'play')
+                        whyBg.style.display = 'block';
+                        bg.style.display = 'none';
+                        whyBg.currentTime = bg.currentTime;
+                    }, 700)
+
+                }
             } else {
                 setTimeout(() => {
                     videoHandler(sectionBg, 'pause')
@@ -95,19 +112,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-    function burgerOpen(){
+
+    function burgerOpen() {
         headerBurger.addEventListener('click', () => {
             classlistHandler([footer, headerNav, headerBurger], 'toggle', 'active')
         });
     }
-    function burgerItemClick(){
+
+    function burgerItemClick() {
         for (let i = 0; i < headerNavItem.length; i++) {
             headerNavItem[i].addEventListener('click', () => {
                 classlistHandler([footer, headerNav, headerBurger], 'remove', 'active')
             })
         }
     }
-    function openPopup(){
+
+    function openPopup() {
         for (let i = 0; i < popupBtn.length; i++) {
             popupBtn[i].addEventListener('click', () => {
                 event.stopPropagation()
@@ -167,104 +187,106 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    function formValidate(form) {
-        for (let i = 0; i < form.length; i++) {
-            if (form[i].classList.contains('_email')) {
-                const emailTest = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-                if (emailTest(form[i])) {
-                    form[i].classList.add('wrong');
-                    return err++;
-
-                }
-            } else if (form[i].classList.contains('phone')) {
-                let phoneValidate = /([^0-9])/g;
-                if (phoneValidate(form[i])) {
-                    form[i].classList.add('wrong');
-                    return err++;
-
-                }
-            } else if (!form[i].value) {
-                form[i].classList.add('wrong');
-                return err++;
-
-            }
-            err = 0;
-        }
-    }
-
-    function sendForm() {
-
-        let formData = new FormData(form);
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', './mail.php');
-        xhr.addEventListener('load', () => {
-            if (Math.floor(xhr.status / 100) !== 2) {
-                console.log(`Error. Status code: ${xhr.status}`, xhr);
-                return;
-            }
-            formSended.textContent = 'Заявка успешно отправлена, с вами свяжется наши специалист';
-            addFormClasses();
-        });
-        xhr.addEventListener('error', () => {
-            formSended.textContent = 'Что-то пошло не так. Пожалуйста, проверьте ваше соединение и попробуйте отправить снова';
-            addFormClasses();
-        });
-        xhr.send(formData);
-        formLoading.classList.add('loading');
-    }
-
-    function addFormClasses() {
-        popup.classList.remove('active');
-        formLoading.classList.remove('loading');
-        formSended.classList.add('active')
-        wrapper.classList.add('active');
-        form.reset();
-        setTimeout(() => {
-            formSended.classList.remove('active')
-            wrapper.classList.remove('active');
-        }, 3000)
-    }
-
-    function videoHandler(arr, type) {
-        setTimeout(function () {
-            arr.forEach(item => {
-                if (type === "play") {
-                    if (!isPlaying) {
-                        item.play();
-                    }
-                    isPlaying = true;
-                } else {
-                    if (isPlaying) {
-                        item.pause();
-                        isPlaying = false;
-                    }
-                }
-            })
-        }, 0);
-    }
-
-    function classlistHandler(arr, method, className) {
-        for (let i = 0; i < arr.length; i++) {
-            if (method === 'toggle') {
-                arr[i].classList.toggle(className)
-            } else if (method === 'add') {
-                arr[i].classList.add(className)
-            } else {
-                arr[i].classList.remove(className)
-            }
-        }
-        arr.forEach(item => {})
-    }
-    function removeError(){
-
-        for (let i = 0; i < validate.length; i++) {
-            validate[i].addEventListener('click', () => {
-                validate[i].classList.remove('wrong')
-            })
-        }
-    }
     burgerOpen();
     burgerItemClick();
     openPopup();
     removeError();
 })
+
+function formValidate(form) {
+    for (let i = 0; i < form.length; i++) {
+        if (form[i].classList.contains('_email')) {
+            const emailTest = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+            if (emailTest(form[i])) {
+                form[i].classList.add('wrong');
+                return err++;
+
+            }
+        } else if (form[i].classList.contains('phone')) {
+            let phoneValidate = /([^0-9])/g;
+            if (phoneValidate(form[i])) {
+                form[i].classList.add('wrong');
+                return err++;
+
+            }
+        } else if (!form[i].value) {
+            form[i].classList.add('wrong');
+            return err++;
+
+        }
+        err = 0;
+    }
+}
+
+function sendForm() {
+
+    let formData = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', './mail.php');
+    xhr.addEventListener('load', () => {
+        if (Math.floor(xhr.status / 100) !== 2) {
+            console.log(`Error. Status code: ${xhr.status}`, xhr);
+            return;
+        }
+        formSended.textContent = 'Заявка успешно отправлена, с вами свяжется наши специалист';
+        addFormClasses();
+    });
+    xhr.addEventListener('error', () => {
+        formSended.textContent = 'Что-то пошло не так. Пожалуйста, проверьте ваше соединение и попробуйте отправить снова';
+        addFormClasses();
+    });
+    xhr.send(formData);
+    formLoading.classList.add('loading');
+}
+
+function addFormClasses() {
+    popup.classList.remove('active');
+    formLoading.classList.remove('loading');
+    formSended.classList.add('active')
+    wrapper.classList.add('active');
+    form.reset();
+    setTimeout(() => {
+        formSended.classList.remove('active')
+        wrapper.classList.remove('active');
+    }, 3000)
+}
+
+function videoHandler(arr, type) {
+    setTimeout(function () {
+        arr.forEach(item => {
+            if (type === "play") {
+                if (!isPlaying) {
+                    item.play();
+                }
+                isPlaying = true;
+            } else {
+                if (isPlaying) {
+                    item.pause();
+                    isPlaying = false;
+                }
+            }
+        })
+    }, 0);
+}
+
+function classlistHandler(arr, method, className) {
+    for (let i = 0; i < arr.length; i++) {
+        if (method === 'toggle') {
+            arr[i].classList.toggle(className)
+        } else if (method === 'add') {
+            arr[i].classList.add(className)
+        } else {
+            arr[i].classList.remove(className)
+        }
+    }
+    arr.forEach(item => {})
+}
+
+function removeError() {
+
+    for (let i = 0; i < validate.length; i++) {
+        validate[i].addEventListener('click', () => {
+            validate[i].classList.remove('wrong')
+        })
+    }
+}
