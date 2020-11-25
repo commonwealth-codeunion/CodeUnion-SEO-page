@@ -52,7 +52,7 @@ gulp.task("scss", function () {
 					"Android >= 4",
 					"Chrome >= 20",
 					"Firefox >= 24",
-					"Explorer >= 11",
+					"Explorer >= 8",
 					"iOS >= 6",
 					"Opera >= 12",
 					"Safari >= 6",

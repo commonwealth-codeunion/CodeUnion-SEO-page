@@ -95,25 +95,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
-    headerBurger.addEventListener('click', () => {
-        classlistHandler([footer, headerNav, headerBurger], 'toggle', 'active')
-
-    });
-    headerNavItem.forEach((elem) => {
-        elem.addEventListener('click', () => {
-            classlistHandler([footer, headerNav, headerBurger], 'remove', 'active')
-        })
-    })
-    popupBtn.forEach(elem => {
-        elem.addEventListener('click', () => {
-            event.stopPropagation()
-            videoHandler(sectionBg, 'pause');
-            classlistHandler([popup, wrapper], 'toggle', 'active')
-            $.fn.fullpage.setAllowScrolling(false);
-            $.fn.fullpage.setKeyboardScrolling(false);
+    function burgerOpen(){
+        headerBurger.addEventListener('click', () => {
+            classlistHandler([footer, headerNav, headerBurger], 'toggle', 'active')
         });
-    })
+    }
+    function burgerItemClick(){
+        for (let i = 0; i < headerNavItem.length; i++) {
+            headerNavItem[i].addEventListener('click', () => {
+                classlistHandler([footer, headerNav, headerBurger], 'remove', 'active')
+            })
+        }
+    }
+    function openPopup(){
+        for (let i = 0; i < popupBtn.length; i++) {
+            popupBtn[i].addEventListener('click', () => {
+                event.stopPropagation()
+                videoHandler(sectionBg, 'pause');
+                classlistHandler([popup, wrapper], 'toggle', 'active')
+                $.fn.fullpage.setAllowScrolling(false);
+                $.fn.fullpage.setKeyboardScrolling(false);
+            });
+        }
+
+    }
     popupClose.addEventListener('click', () => {
         videoHandler(sectionBg, 'play');
         classlistHandler([popup, wrapper], 'remove', 'active')
@@ -239,20 +244,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function classlistHandler(arr, method, className) {
-        arr.forEach(item => {
+        for (let i = 0; i < arr.length; i++) {
             if (method === 'toggle') {
-
-                item.classList.toggle(className)
+                arr[i].classList.toggle(className)
             } else if (method === 'add') {
-                item.classList.add(className)
+                arr[i].classList.add(className)
             } else {
-                item.classList.remove(className)
+                arr[i].classList.remove(className)
             }
-        })
+        }
+        arr.forEach(item => {})
     }
-    validate.forEach((elem) => {
-        elem.addEventListener('click', () => {
-            elem.classList.remove('wrong')
-        })
-    })
+    function removeError(){
+
+        for (let i = 0; i < validate.length; i++) {
+            validate[i].addEventListener('click', () => {
+                validate[i].classList.remove('wrong')
+            })
+        }
+    }
+    burgerOpen();
+    burgerItemClick();
+    openPopup();
+    removeError();
 })
