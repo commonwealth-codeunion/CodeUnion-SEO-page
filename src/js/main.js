@@ -30,172 +30,22 @@ function checkWidth() {
     }
 }
 checkWidth()
-document.addEventListener('DOMContentLoaded', () => {
-    preloader.classList.add('loaded');
-    document.body.style.overflow = ''
-    $('#fullpage').fullpage({
-        //options here
-        menu: '#myMenu',
-        normalScrollElements: '.price__items-wrapper, .trust__slider',
-        anchors: ['promotion', 'why', 'services', 'price', 'trust'],
-        onLeave(index, nextIndex, direction) {
-            if (servicesBgSource.src.length > 10 && bgSource.src.length > 10) {
-                if (nextIndex === 1) {
-                    servicesBg.style.display = 'none';
-                    bg.style.display = 'block';
-                    setTimeout(() => {
-                        videoHandler(sectionBg, 'play')
-                    }, 150)
-                } else if (nextIndex === 2) {
-                    servicesBg.style.display = 'none';
-                    bg.style.display = 'block';
-                    setTimeout(() => {
-                        videoHandler(sectionBg, 'play')
-                    }, 150)
-                    if(index === 3){
-                        bg.currentTime = (servicesBg.currentTime);
-                    }
-                } else if (nextIndex === 3) {
-                    setTimeout(() => {
-                        bg.style.display = 'none';
-                        servicesBg.style.display = 'block';
-                        servicesBg.play();
-                    }, 700)
-                    servicesBg.currentTime = (bg.currentTime + 0.7);
 
-                } else {
-                    setTimeout(() => {
-                        videoHandler(sectionBg, 'pause')
-                        bg.style.display = 'none';
-                        servicesBg.style.display = 'block';
-                    }, 150)
-                }
-            }
-        },
-    });
-    sectionUp.addEventListener('click', () => {
-        $.fn.fullpage.moveSectionUp()
-    })
-    sectionDown.addEventListener('click', () => {
-        $.fn.fullpage.moveSectionDown()
-    })
-    let servicesSwiper = new Swiper('.services__slider', {
-        speed: 500,
-        loop: true,
-        spaceBetween: 200,
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'fraction',
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-    let trustSwiper = new Swiper('.trust__slider', {
-        speed: 600,
-        loop: true,
-        slidesPerView: 3,
-        spaceBetween: 108,
-        autoplay: {
-            delay: 1500,
-            disableOnInteraction: true,
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 2,
-                spaceBetween: 20
-            },
-            580: {
-                slidesPerView: 3,
-                spaceBetween: 50
-            },
-            1280: {
-                slidesPerView: 3,
-                spaceBetween: 108
-            }
-        }
-    });
-
-    function burgerOpen() {
-        headerBurger.addEventListener('click', () => {
-            classlistHandler([footer, headerNav, headerBurger], 'toggle', 'active')
-        });
-    }
-
-    function burgerItemClick() {
-        for (let i = 0; i < headerNavItem.length; i++) {
-            headerNavItem[i].addEventListener('click', () => {
-                classlistHandler([footer, headerNav, headerBurger], 'remove', 'active')
-            })
-        }
-    }
-
-    function openPopup() {
-        for (let i = 0; i < popupBtn.length; i++) {
-            popupBtn[i].addEventListener('click', () => {
-                event.stopPropagation()
-                videoHandler(sectionBg, 'pause');
-                classlistHandler([popup, wrapper], 'toggle', 'active')
-                $.fn.fullpage.setAllowScrolling(false);
-                $.fn.fullpage.setKeyboardScrolling(false);
-            });
-        }
-
-    }
-    popupClose.addEventListener('click', () => {
-        videoHandler(sectionBg, 'play');
-        classlistHandler([popup, wrapper], 'remove', 'active')
+function showRotateImg() {
+    if (window.innerWidth <= 840 && window.innerHeight <= 420) {
+        const img = document.createElement('img');
+        img.src = '../images/rotate.png';
+        formSended.appendChild(img);
+        classlistHandler([wrapper, formSended], 'add', 'active');
+        $.fn.fullpage.setAllowScrolling(false);
+        $.fn.fullpage.setKeyboardScrolling(false);
+    } else {
+        formSended.innerHTML = ''
+        classlistHandler([wrapper, formSended], 'remove', 'active');
         $.fn.fullpage.setAllowScrolling(true);
         $.fn.fullpage.setKeyboardScrolling(true);
-
-    });
-    wrapper.addEventListener('click', () => {
-        videoHandler(sectionBg, 'play');
-        classlistHandler([popup, wrapper], 'remove', 'active')
-        $.fn.fullpage.setAllowScrolling(true);
-        $.fn.fullpage.setKeyboardScrolling(true);
-    });
-    inputPhone.addEventListener('keydown', function (event) {
-        if (!(event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Backspace' || event.key == 'Tab')) {
-            event.preventDefault()
-        }
-        var mask = '+7 (111) 111-11-11'; // Задаем маску
-
-        if (/[0-9\+\ \-\(\)]/.test(event.key)) {
-            // Здесь начинаем сравнивать this.value и mask
-            // к примеру опять же
-            var currentString = this.value;
-            var currentLength = currentString.length;
-            if (/[0-9]/.test(event.key)) {
-                if (mask[currentLength] == '1') {
-                    this.value = currentString + event.key;
-                } else {
-                    for (var i = currentLength; i < mask.length; i++) {
-                        if (mask[i] == '1') {
-                            this.value = currentString + event.key;
-                            break;
-                        }
-                        currentString += mask[i];
-                    }
-                }
-            }
-        }
-    });
-    let err = 0;
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        formValidate(validate);
-        if (err === 0) {
-            sendForm()
-        }
-    })
-
-    burgerOpen();
-    burgerItemClick();
-    openPopup();
-    removeError();
-})
+    }
+}
 
 function formValidate(form) {
     for (let i = 0; i < form.length; i++) {
@@ -294,3 +144,170 @@ function removeError() {
         })
     }
 }
+document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('resize', showRotateImg);
+    preloader.classList.add('loaded');
+    document.body.style.overflow = ''
+
+    $('#fullpage').fullpage({
+        menu: '#myMenu',
+        normalScrollElements: '.price__items-wrapper, .trust__slider',
+        anchors: ['promotion', 'why', 'services', 'price', 'trust'],
+        onLeave(index, nextIndex, direction) {
+            if (servicesBgSource.src.length > 10 && bgSource.src.length > 10) {
+                if (nextIndex === 1) {
+                    servicesBg.style.display = 'none';
+                    bg.style.display = 'block';
+                    setTimeout(() => {
+                        videoHandler(sectionBg, 'play')
+                    }, 150)
+                } else if (nextIndex === 2) {
+                    servicesBg.style.display = 'none';
+                    bg.style.display = 'block';
+                    setTimeout(() => {
+                        videoHandler(sectionBg, 'play')
+                    }, 150)
+                    if (index === 3) {
+                        bg.currentTime = (servicesBg.currentTime);
+                    }
+                } else if (nextIndex === 3) {
+                    setTimeout(() => {
+                        bg.style.display = 'none';
+                        servicesBg.style.display = 'block';
+                        servicesBg.play();
+                    }, 700)
+                    servicesBg.currentTime = (bg.currentTime + 0.7);
+
+                } else {
+                    setTimeout(() => {
+                        videoHandler(sectionBg, 'pause')
+                        bg.style.display = 'none';
+                        servicesBg.style.display = 'block';
+                    }, 150)
+                }
+            }
+        },
+    });
+    sectionUp.addEventListener('click', () => {
+        $.fn.fullpage.moveSectionUp()
+    })
+    sectionDown.addEventListener('click', () => {
+        $.fn.fullpage.moveSectionDown()
+    })
+    let servicesSwiper = new Swiper('.services__slider', {
+        speed: 500,
+        loop: true,
+        spaceBetween: 200,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    let trustSwiper = new Swiper('.trust__slider', {
+        speed: 600,
+        loop: true,
+        slidesPerView: 3,
+        spaceBetween: 108,
+        autoplay: {
+            delay: 1500,
+            disableOnInteraction: true,
+        },
+        breakpoints: {
+            540: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 108,
+            },
+        }
+    });
+
+    function burgerOpen() {
+        headerBurger.addEventListener('click', () => {
+            classlistHandler([footer, headerNav, headerBurger], 'toggle', 'active')
+        });
+    }
+
+    function burgerItemClick() {
+        for (let i = 0; i < headerNavItem.length; i++) {
+            headerNavItem[i].addEventListener('click', () => {
+                classlistHandler([footer, headerNav, headerBurger], 'remove', 'active')
+            })
+        }
+    }
+
+    function openPopup() {
+        for (let i = 0; i < popupBtn.length; i++) {
+            popupBtn[i].addEventListener('click', () => {
+                event.stopPropagation()
+                videoHandler(sectionBg, 'pause');
+                classlistHandler([popup, wrapper], 'toggle', 'active')
+                $.fn.fullpage.setAllowScrolling(false);
+                $.fn.fullpage.setKeyboardScrolling(false);
+            });
+        }
+
+    }
+    popupClose.addEventListener('click', () => {
+        videoHandler(sectionBg, 'play');
+        classlistHandler([popup, wrapper], 'remove', 'active')
+        $.fn.fullpage.setAllowScrolling(true);
+        $.fn.fullpage.setKeyboardScrolling(true);
+
+    });
+    wrapper.addEventListener('click', () => {
+        videoHandler(sectionBg, 'play');
+        classlistHandler([popup, wrapper], 'remove', 'active')
+        $.fn.fullpage.setAllowScrolling(true);
+        $.fn.fullpage.setKeyboardScrolling(true);
+    });
+    inputPhone.addEventListener('keydown', function (event) {
+        if (!(event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Backspace' || event.key == 'Tab')) {
+            event.preventDefault()
+        }
+        var mask = '+7 (111) 111-11-11'; // Задаем маску
+
+        if (/[0-9\+\ \-\(\)]/.test(event.key)) {
+            // Здесь начинаем сравнивать this.value и mask
+            // к примеру опять же
+            var currentString = this.value;
+            var currentLength = currentString.length;
+            if (/[0-9]/.test(event.key)) {
+                if (mask[currentLength] == '1') {
+                    this.value = currentString + event.key;
+                } else {
+                    for (var i = currentLength; i < mask.length; i++) {
+                        if (mask[i] == '1') {
+                            this.value = currentString + event.key;
+                            break;
+                        }
+                        currentString += mask[i];
+                    }
+                }
+            }
+        }
+    });
+    let err = 0;
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        formValidate(validate);
+        if (err === 0) {
+            sendForm()
+        }
+    })
+    showRotateImg()
+    burgerOpen();
+    burgerItemClick();
+    openPopup();
+    removeError();
+})
