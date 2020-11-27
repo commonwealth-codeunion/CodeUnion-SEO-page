@@ -88,7 +88,7 @@
     }
 
     .trust {
-        &__title{
+        &__title {
             margin-bottom: 30px;
         }
     }
@@ -96,9 +96,10 @@
 }
 
 @media(max-width: 1350px) {
-    .container{
+    .container {
         width: 90%;
     }
+
     #myMenu {
         display: none;
     }
@@ -249,6 +250,7 @@
             -moz-height: 18px;
             display: block;
             padding: 1px 10px;
+
             &.active {
                 span {
                     &::before {
@@ -297,38 +299,41 @@
 
     .promotion {
         background-color: #000;
-        background-position: center -10vh;
-        background-repeat: no-repeat;
-        background-size: 90%;
-        background-image: url('../images/promotion-bg2.jpg');
+
         &__paragraph {
             max-width: 100%;
         }
 
     }
-    .why{
+
+    .why {
         background-color: #000;
-        background-position: center bottom;
-        background-repeat: no-repeat;
-        background-size: 60%;
-        background-image: url('../images/why-bg-mobile.jpg');
-        &__bg{
-            display: none !important;
-        }
     }
+
     .services {
 
         .swiper-container {
             width: 100%;
         }
+
+        &__bg {
+            display: none !important;
+        }
     }
 
     .price {
+        padding: 20vw 0 10vw;
         &__items-wrapper {
-            max-width: 90vw;
-            overflow-x: scroll;
-            position: relative;
+            flex-wrap: wrap;
 
+        }
+        &__card{
+            margin: 10px 0;
+            width: 100%;
+            min-width: auto;
+        }
+        &__card + &__card{
+            margin-left: 0;
         }
     }
 
@@ -430,9 +435,10 @@
     }
 
     .services {
-        .swiper-pagination{
+        .swiper-pagination {
             top: 8%;
         }
+
         &__title {
             margin-bottom: 25px;
             text-align: center;
@@ -533,7 +539,9 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-
+        &.success{
+            height: 100vh;
+        }
         &__close {
             top: 50px;
             right: 30px;
@@ -576,14 +584,8 @@
     .subtitle {
         font-size: 14px;
     }
-    .promotion{
-        background-position-y: -2vh;
-        background-size: 100%;
-    }
-    .why{
-        background-position-y: bottom;
-        background-size: 80%;
-    }
+
+
     .services {
 
         .services__subtitle {
@@ -600,8 +602,6 @@
     }
 
     .price {
-        padding-top: 20px;
-
         &__card-top {
             &__title {
                 font-size: 16px;
@@ -614,7 +614,6 @@
 
         &__card {
             min-height: 185px;
-            min-width: 350px;
         }
 
         &__card-bottom {

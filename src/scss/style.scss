@@ -118,7 +118,7 @@ body {
 
 .sended {
     text-align: center;
-    margin: 0 10px;
+    padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,8 +155,15 @@ body {
     z-index: 99;
     background-color: #000;
     max-width: 733px;
+    
     transition: all .3s;
-
+    &.success{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        height: 60vh;
+    }
     &.active {
         opacity: 1;
         visibility: visible;

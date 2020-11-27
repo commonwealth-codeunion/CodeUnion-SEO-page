@@ -6,6 +6,7 @@ const preloader = document.querySelector('.preloader'),
     wrapper = document.querySelector('.wrapper'),
     popupBtn = document.querySelectorAll('.popup-btn'),
     popup = document.querySelector('.popup'),
+    popupWrapper = document.querySelector('.popup__wrapper'),
     popupClose = document.querySelector('.popup__close'),
     footer = document.querySelector('.footer'),
     form = document.querySelector(".form"),
@@ -46,19 +47,20 @@ function showRotateImg() {
         $.fn.fullpage.setKeyboardScrolling(true);
     }
 }
+let err = 0;
 
 function formValidate(form) {
     for (let i = 0; i < form.length; i++) {
-        if (form[i].classList.contains('_email')) {
+        if (form[i].classList.contains('email')) {
             const emailTest = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-            if (emailTest(form[i])) {
+            if (!emailTest.test(form[i].value)) {
                 form[i].classList.add('wrong');
                 return err++;
 
             }
         } else if (form[i].classList.contains('phone')) {
-            let phoneValidate = /([^0-9])/g;
-            if (phoneValidate(form[i])) {
+            var phoneValidate = form[i].value.replace(/[^\w\s]/g, '').split(' ').join('');
+            if (phoneValidate.length !== 11) {
                 form[i].classList.add('wrong');
                 return err++;
 
@@ -82,12 +84,16 @@ function sendForm() {
             console.log(`Error. Status code: ${xhr.status}`, xhr);
             return;
         }
-        formSended.textContent = 'Заявка успешно отправлена, с вами свяжется наши специалист';
+        formSended.textContent = 'Заявка успешно отправлена, с вами свяжется наш специалист';
         addFormClasses();
+        popup.classList.add('success');
+        popupWrapper.style.fontSize = '22px'
+        popupWrapper.innerHTML = 'Спасибо за заявку! Наш специалист свяжется с вами в течение нескольких минут';
     });
     xhr.addEventListener('error', () => {
         formSended.textContent = 'Что-то пошло не так. Пожалуйста, проверьте ваше соединение и попробуйте отправить снова';
         addFormClasses();
+
     });
     xhr.send(formData);
     formLoading.classList.add('loading');
@@ -98,7 +104,7 @@ function addFormClasses() {
     formLoading.classList.remove('loading');
     formSended.classList.add('active')
     wrapper.classList.add('active');
-    form.reset();
+    // form.reset();
     setTimeout(() => {
         formSended.classList.remove('active')
         wrapper.classList.remove('active');
@@ -151,7 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     $('#fullpage').fullpage({
         menu: '#myMenu',
-        normalScrollElements: '.price__items-wrapper, .trust__slider',
+        scrollOverflow: true,
+        normalScrollElements: '.trust__slider',
         anchors: ['promotion', 'why', 'services', 'price', 'trust'],
         onLeave(index, nextIndex, direction) {
             if (servicesBgSource.src.length > 10 && bgSource.src.length > 10) {
@@ -297,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-    let err = 0;
+
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         formValidate(validate);
