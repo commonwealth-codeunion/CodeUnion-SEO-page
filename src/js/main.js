@@ -61,6 +61,9 @@ function formValidate(form) {
             const emailTest = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
             if (!emailTest.test(form[i].value)) {
                 form[i].classList.add('wrong');
+                setTimeout(() => {
+                    form[i].classList.remove('wrong');
+                }, 1000)
                 return err++;
 
             }
@@ -68,11 +71,17 @@ function formValidate(form) {
             var phoneValidate = form[i].value.replace(/[^\w\s]/g, '').split(' ').join('');
             if (phoneValidate.length !== 11) {
                 form[i].classList.add('wrong');
+                setTimeout(() => {
+                    form[i].classList.remove('wrong');
+                }, 1000)
                 return err++;
 
             }
         } else if (!form[i].value) {
             form[i].classList.add('wrong');
+            setTimeout(() => {
+                form[i].classList.remove('wrong');
+            }, 1000)
             return err++;
 
         }

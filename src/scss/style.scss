@@ -220,7 +220,7 @@ body {
             color: #fff;
             font-size: 22px;
             line-height: 128%;
-
+            transition: border .45s;
             &:focus::placeholder {
                 color: transparent;
 
@@ -233,7 +233,7 @@ body {
             &::placeholder {
                 color: #fff;
                 opacity: .7;
-
+                transition: color .45s;
 
             }
 
