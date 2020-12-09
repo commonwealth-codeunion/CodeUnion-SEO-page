@@ -187,7 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         },
     });
-    console.log($.fn.fullpage.anchors);
     sectionUp.addEventListener('click', () => {
         $.fn.fullpage.moveSectionUp()
     })
