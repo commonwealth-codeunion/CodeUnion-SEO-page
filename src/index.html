@@ -46,29 +46,28 @@
   </div>
 
   <div class="wrapper">
-    <ul id="myMenu">
+    <nav id="myMenu">
       <button class="nav-btn section-up">
         <svg width="20" height="11" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path class="nav-btn__arrow" d="M19 10L10 1L1 10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </button>
-      <li data-menuanchor="promotion" class="nav-round active"><a href="#promotion"></a></li>
-      <li data-menuanchor="why" class="nav-round"><a href="#why"></a></li>
-      <li data-menuanchor="services" class="nav-round"><a href="#services"></a></li>
-      <li data-menuanchor="price" class="nav-round"><a href="#price"></a></li>
-      <li data-menuanchor="trust" class="nav-round"><a href="#trust"></a></li>
+      <p data-menuanchor="promotion" class="nav-round active"><a href="#promotion"></a></p>
+      <p data-menuanchor="why" class="nav-round"><a href="#why"></a></p>
+      <p data-menuanchor="services" class="nav-round"><a href="#services"></a></p>
+      <p data-menuanchor="price" class="nav-round"><a href="#price"></a></p>
+      <p data-menuanchor="trust" class="nav-round"><a href="#trust"></a></p>
       <button class="nav-btn section-down">
         <svg width="20" height="11" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path class="nav-btn__arrow" d="M0.999999 1L10 10L19 1" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </button>
-    </ul>
+    </nav>
     @@include('components/_header.html')
     <!-- WRITE CODE HERE -->
     <div class="bg-video-wrapper">
       <video class="section-bg section-bg-main" loop muted autoplay>
         <source src="bg-video/11.mp4" type="video/mp4">
-        </source>
       </video>
 
     </div>
@@ -125,7 +124,6 @@
       <div class="section">
         <video class="section-bg services__bg" loop muted autoplay>
           <source src="bg-video/11.mp4" type="video/mp4">
-          </source>
         </video>
         <section class="page-section services">
           <div class="container">
@@ -140,9 +138,9 @@
                     <span>Яндекс Директ и Google Ads</span>
                   </h3>
                   <ul class="services__list">
-                    <p class="services__list-title">
+                    <li class="services__list-title">
                       Разработка рекламных кампаний включает в себя:
-                    </p>
+                  </li>
                     <li class="services__list-item">
                       Анализ активности ваших конкурентов в контекстной рекламе
                     </li>
@@ -168,9 +166,9 @@
                     Ведение рекламных кампаний
                   </h3>
                   <ul class="services__list">
-                    <p class="services__list-title">
+                    <li class="services__list-title">
                       Ведение рекламных кампаний включает в себя
-                    </p>
+                    </li>
                     <li class="services__list-item">
                       Анализ активности пользователей на сайте
                     </li>
@@ -255,7 +253,7 @@
                   </div>
                 </div>
               </div>
-              <ul class="price__items-list">
+              <div class="price__items-list">
                 <h5 class="price__items-list-title">
                   Услуги
                 </h5>
@@ -305,7 +303,7 @@
                   </div>
 
                 </div>
-              </ul>
+              </div>
             </div>
           </div>
         </section>
