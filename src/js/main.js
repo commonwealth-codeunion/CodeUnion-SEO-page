@@ -27,7 +27,13 @@ function checkWidth() {
     if (window.innerWidth <= 1025) {
         servicesBgSource.src = '//:0';
         bgSource.src = '//:0';
-        videoHandler(sectionBg, 'pause')
+        videoHandler(sectionBg, 'pause');
+    } else {
+        servicesBgSource.src = 'bg-video/11.mp4';
+        bgSource.src = 'bg-video/11.mp4';
+        videoHandler(sectionBg, 'play');
+
+
     }
 }
 checkWidth()
@@ -84,46 +90,30 @@ function sendForm() {
             console.log(`Error. Status code: ${xhr.status}`, xhr);
             return;
         }
-        formSended.textContent = 'Заявка успешно отправлена, с вами свяжется наш специалист';
-        addFormClasses();
         popup.classList.add('success');
         popupWrapper.style.fontSize = '22px'
         popupWrapper.innerHTML = 'Спасибо за заявку! Наш специалист свяжется с вами в течение нескольких минут';
     });
     xhr.addEventListener('error', () => {
-        formSended.textContent = 'Что-то пошло не так. Пожалуйста, проверьте ваше соединение и попробуйте отправить снова';
-        addFormClasses();
+        popupWrapper.innerHTML = 'Что-то пошло не так. Пожалуйста, проверьте ваше соединение и попробуйте отправить снова';
 
     });
     xhr.send(formData);
     formLoading.classList.add('loading');
 }
 
-function addFormClasses() {
-    popup.classList.remove('active');
-    formLoading.classList.remove('loading');
-    formSended.classList.add('active')
-    wrapper.classList.add('active');
-    // form.reset();
-    setTimeout(() => {
-        formSended.classList.remove('active')
-        wrapper.classList.remove('active');
-    }, 3000)
-}
 
 function videoHandler(arr, type) {
     setTimeout(function () {
         arr.forEach(item => {
             if (type === "play") {
-                if (!isPlaying) {
-                    item.play();
-                }
+                item.play();
+
                 isPlaying = true;
             } else {
-                if (isPlaying) {
-                    item.pause();
-                    isPlaying = false;
-                }
+                item.pause();
+                isPlaying = false;
+
             }
         })
     }, 0);
@@ -151,13 +141,15 @@ function removeError() {
     }
 }
 document.addEventListener('DOMContentLoaded', () => {
-    window.addEventListener('resize', showRotateImg);
+    window.addEventListener('resize', () => {
+        showRotateImg();
+        checkWidth()
+    });
     preloader.classList.add('loaded');
     document.body.style.overflow = ''
 
-    $('#fullpage').fullpage({
+    let fullPage = $('#fullpage').fullpage({
         menu: '#myMenu',
-        scrollOverflow: true,
         normalScrollElements: '.trust__slider',
         anchors: ['promotion', 'why', 'services', 'price', 'trust'],
         onLeave(index, nextIndex, direction) {
@@ -195,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         },
     });
+    console.log($.fn.fullpage.anchors);
     sectionUp.addEventListener('click', () => {
         $.fn.fullpage.moveSectionUp()
     })

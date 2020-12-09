@@ -114,7 +114,6 @@ gulp.task("script", function () {
 			//тут подключаем разные js в общую библиотеку. Отключите то, что вам не нужно.
 			"node_modules/jquery/dist/jquery.min.js",
 			"node_modules/fullpage.js/dist/jquery.fullpage.min.js",
-			"node_modules/fullpage.js/vendors/scrolloverflow.min.js",
 			"node_modules/swiper/swiper.min.js",
 			// "node_modules/fullpage.js/dist/jquery.fullpage.min.js", jquery.fullpage.extensions.min.js
 		])

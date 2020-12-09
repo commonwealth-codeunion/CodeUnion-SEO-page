@@ -13,13 +13,14 @@ $email = $_POST['user_email'];
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.mail.ru';  																							// Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'pr@codeunion.kz'; // Ваш логин от почты с которой будут отправляться письма
-$mail->Password = '9+sE5RtqOcKp'; // Ваш пароль от почты с которой будут отправляться письма
+$mail->Username = 'codeunion.seo@codeu122.st8.ru'; // Ваш логин от почты с которой будут отправляться письма
+$mail->Password = 'sGsPaJ2266kZy6p'; // Ваш пароль от почты с которой будут отправляться письма
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
 
-$mail->setFrom('pr@codeunion.kz'); // от кого будет уходить письмо?
-$mail->addAddress('seo@codeunion.kz');     // Кому будет уходить письмо 
+$mail->setFrom('codeunion.seo@codeu122.st8.ru'); // от кого будет уходить письмо?
+$mail->addAddress('n.zhumahan@codeunion.kz');     // Кому будет уходить письмо 
+// $mail->addAddress('seo@codeunion.kz');     // Кому будет уходить письмо 
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
 //$mail->addCC('cc@example.com');
