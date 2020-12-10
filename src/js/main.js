@@ -22,12 +22,13 @@ const preloader = document.querySelector('.preloader'),
     servicesBgSource = servicesBg.querySelector('source'),
     bgSource = bg.querySelector('source');
 let isPlaying = true;
+checkWidth()
 
 function checkWidth() {
     if (window.innerWidth <= 1025) {
-        servicesBgSource.src = '//:0';
-        bgSource.src = '//:0';
-        videoHandler(sectionBg, 'pause');
+        sectionBg.forEach(video => {
+            video.remove();
+        })
     } else {
         servicesBgSource.src = 'bg-video/11.mp4';
         bgSource.src = 'bg-video/11.mp4';
@@ -36,7 +37,6 @@ function checkWidth() {
 
     }
 }
-checkWidth()
 
 function showRotateImg() {
     if (window.innerWidth <= 840 && window.innerHeight <= 420) {
