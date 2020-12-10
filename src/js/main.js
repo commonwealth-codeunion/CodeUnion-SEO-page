@@ -216,6 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
     let trustSwiper = new Swiper('.trust__slider', {
+        lazy: true,
         speed: 600,
         loop: true,
         slidesPerView: 3,
