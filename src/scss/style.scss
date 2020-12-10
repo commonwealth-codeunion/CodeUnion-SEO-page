@@ -222,12 +222,12 @@ body {
             line-height: 128%;
             transition: border .45s;
             &:focus::placeholder {
-                color: transparent;
+                opacity: 0;
 
             }
 
             &:focus::-moz-placeholder {
-                color: transparent;
+                opacity: 0;
             }
 
             &::placeholder {
@@ -419,8 +419,7 @@ body {
     background: transparent;
 
     &__title {
-        font-family: 'Roboto', sans-serif;
-        margin-bottom: 33px;
+        margin-bottom: 23px;
     }
 
 
@@ -473,13 +472,13 @@ body {
     }
 
     &__title {
-        max-width: 576px;
-        margin-bottom: 44px;
+        max-width: 600px;
+        margin-bottom: 34px;
         font-family: "SF-Pro", sans-serif;
     }
 
     &__paragraph {
-        width: 479px;
+        width: 700px;
     }
 }
 
@@ -549,6 +548,7 @@ body {
     }
 
     .swiper-nav-wrapper {
+        margin-top: 15px;
         display: flex;
         justify-content: space-between;
     }
@@ -558,6 +558,7 @@ body {
         transform: translateX(-50%);
         width: auto;
         height: 100%;
+        font-size: 18px;
     }
     .swiper-button-prev,
     .swiper-button-next {
@@ -568,10 +569,10 @@ body {
         height: auto;
     }
     .swiper-button-prev{
-        left: 20px;
+        left: 15px;
     }
     .swiper-button-next{
-        right: 20px;
+        right: 15px;
     }
     .swiper-button-prev::after,
     .swiper-button-next::after {

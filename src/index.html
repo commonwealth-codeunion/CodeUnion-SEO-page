@@ -3,9 +3,27 @@
 @@include('components/_head.html')
 
 <body>
-  <div class="font_preload" style="opacity: 0">
-    <span style="font-family: 'SF-Pro', sans-serif"></span>
-  </div>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () {
+        (m[i].a = m[i].a || []).push(arguments)
+      };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k,
+        a)
+    })
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(70339147, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/70339147" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
   <div class="preloader">
     <div class="cssload-loader">
       <div class="cssload-inner cssload-one"></div>
@@ -37,9 +55,9 @@
 
           </div>
         </div>
-        <input class="form__input" name="user_name" type="text" placeholder="Полное имя">
-        <input class="form__input email" name="user_email" type="email" placeholder="E-mail">
-        <input class="form__input phone" name="user_phone" id="phone" type="tel" placeholder="Телефон">
+        <input class="form__input" name="name" type="text" placeholder="Полное имя">
+        <input class="form__input email" name="email" type="email" placeholder="E-mail">
+        <input class="form__input phone" name="phone" id="phone" type="tel" placeholder="Телефон">
         <button class="form__send">Отправить</button>
       </form>
 
@@ -68,308 +86,321 @@
     </nav>
     @@include('components/_header.html')
     <!-- WRITE CODE HERE -->
-    <div class="bg-video-wrapper">
-      <video class="section-bg section-bg-main" loop muted autoplay>
+  <div class="bg-video-wrapper">
+    <video class="section-bg section-bg-main" loop muted autoplay>
+      <source src="bg-video/11.mp4" type="video/mp4">
+    </video>
+
+  </div>
+  <div id="fullpage">
+    <div class="section">
+      <!-- PROMOTION -->
+      <section class="page-section promotion">
+        <div class="container">
+          <h2 class="title promotion__title">
+            Контекстная реклама и
+            <br>
+            SEO Продвижение.
+          </h2>
+          <p class="paragraph promotion__paragraph">
+            Контекстная и поисковая реклама в интернете <em>поможет Вашему бизнесу</em> не только выжить, но и стать <em>намного
+            успешнее</em> в нынешних условиях.
+            <br>
+            <br>
+            SEO Продвижение — (поиско́вая оптимиза́ция) комплекс мер по внутренней и внешней оптимизации для поднятия
+            позиций сайта в результатах выдачи поисковых систем по определённым запросам пользователей.
+            Мы предлагаем Вам наши услуги по настройке и дальнейшему продвижению рекламы ваших товаров и услуг в
+            интернете.
+          </p>
+          <a class="main-button promotion__button" href="#why">
+            Подробнее
+          </a>
+        </div>
+        <a class="promotion__next" href="#why">
+          <svg class="promotion__next-svg" width="22" viewBox="0 0 22 22" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path class="promotion__next-path promotion__next-arrow"
+              d="M0.578612 11.0002L10.5786 21.0002L20.5786 11.0002" stroke-linecap="round" stroke-linejoin="round" />
+            <path class="promotion__next-path promotion__next-line" d="M10.699 1.00024L10.699 21.0002"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </section>
+      <!-- PROMOTION -->
+    </div>
+
+
+    <!-- WHY -->
+    <div class="section">
+      <section class="page-section promotion why">
+        <div class="container">
+          <h2 class="title promotion__title why__title">
+            Зачем нужна Контекстная реклама и
+            <br>
+            SEO Продвижение?
+          </h2>
+          <p class="paragraph promotion__paragraph why__paragraph">
+            Продвижение Ваших товаров и услуг поможет как <em>повысить узнаваемость</em> Вашего <em>бренда</em>, так и значительно
+            <em>увеличить продажи</em>, так как реклама в интернете настраивается на целевую аудиторию учитывая возраст, пол,
+            регион проживания и поисковые запросы потенциальных клиентов.
+            Это помогает <em>находить</em> ваш сайт <em>потенциальным клиентам</em>, позволяет увеличить трафик до 100% и значительно
+            <em>увеличить продажи</em> ваших товаров и услуг.
+          </p>
+          <a class="main-button promotion__button why__button" href="#services">
+            Услуги
+          </a>
+        </div>
+      </section>
+    </div>
+    <!-- WHY -->
+
+
+    <!-- SERVICES -->
+    <div class="section">
+      <video class="section-bg services__bg" loop muted autoplay>
         <source src="bg-video/11.mp4" type="video/mp4">
       </video>
+      <section class="page-section services">
+        <div class="container">
+          <h2 class="title services__title">
+            Услуги
+          </h2>
+          <div class="swiper-container services__slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <h3 class="subtitle services__subtitle">
+                  Разработка рекламных кампаний
+                  <span>Яндекс Директ и Google Ads</span>
+                </h3>
+                <ul class="services__list">
+                  <li class="services__list-title">
+                    Разработка рекламных кампаний включает в себя:
+                  </li>
+                  <li class="services__list-item">
+                    Анализ активности ваших конкурентов в контекстной рекламе
+                  </li>
+                  <li class="services__list-item">
+                    Определение бюджета рекламных компаний
+                  </li>
+                  <li class="services__list-item">
+                    Подбор ключевых слов и фраз
+                  </li>
+                  <li class="services__list-item">
+                    Подбор минус слов и фраз
+                  </li>
+                  <li class="services__list-item">
+                    Определение целевой аудитории рекламной кампании
+                  </li>
+                  <li class="services__list-item">
+                    Создание рекламных баннеров и объявлений
+                  </li>
+                </ul>
+              </div>
+              <div class="swiper-slide">
+                <h3 class="subtitle services__subtitle">
+                  Ведение рекламных кампаний
+                </h3>
+                <ul class="services__list">
+                  <li class="services__list-title">
+                    Ведение рекламных кампаний включает в себя
+                  </li>
+                  <li class="services__list-item">
+                    Анализ активности пользователей на сайте
+                  </li>
+                  <li class="services__list-item">
+                    Определение возрастных категорий посетителей
+                  </li>
+                  <li class="services__list-item">
+                    Определение количества новых посетителей
+                  </li>
+                  <li class="services__list-item">
+                    Определение источника трафика
+                  </li>
+                  <li class="services__list-item">
+                    Определение количества посетителей смомента начала рекламной кампании
+                  </li>
+                  <li class="services__list-item">
+                    Проведение анализа статистики в ходе рекламной кампании, выявление и добавление дополнительных
+                    ключевых,
+                    минус фраз и слов
+                  </li>
+                  <li class="services__list-item">
+                    Предоставление ежемесячного отчета включающего в себя вышеперечисленную статистику
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="swiper-nav-wrapper">
+              <div class="swiper-nav-items">
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev">
+                  <svg width="12" height="18" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 13L1 7L7 1" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="swiper-button-next">
+                  <svg width="12" height="18" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.999999 1L7 7L1 13" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+              </div>
+              <a class="main-button services__button" href="#price">
+                Цены
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
     </div>
-    <div id="fullpage">
-      <div class="section">
-        <!-- PROMOTION -->
-        <section class="page-section promotion">
-          <div class="container">
-            <h2 class="title promotion__title">
-              SEO Продвижение
-            </h2>
-            <p class="paragraph promotion__paragraph">
-              Поиско́вая оптимиза́ция — комплекс мер по внутренней и внешней оптимизации для поднятия позиций сайта в
-              результатах выдачи поисковых систем по определённым запросам пользователей.
-            </p>
-            <button class="main-button promotion__button popup-btn">
-              Подробнее
-            </button>
+
+    <!-- SERVICES -->
+
+    <!-- PRICE -->
+    <div class="section">
+
+      <section class="page-section price">
+        <div class="container">
+          <h2 class="title price__title">
+            Цены
+          </h2>
+          <div class="price__wrapper">
+            <div class="price__card contacts">
+              <div class="price__card-top contacts__top">
+                <h4 class="price__card-top__title contacts__title">
+                  Есть вопросы? Позвоните!
+                </h4>
+                <p class="price__card-top__subtitle">
+                  и мы обсудим вашу задачу и предложим вам наиболее подходящий вариант!
+                </p>
+              </div>
+              <div class="price__card-bottom contacts__bottom">
+                <div class="price__card-bottom__item">
+                  <span>телефон</span>
+                  <a class="price__card-bottom__item-link" href="tel:+77077212959">+7 707 721 29 59</a>
+                </div>
+                <div class="price__card-bottom__item">
+                  <span>почта</span>
+                  <a class="price__card-bottom__item-link" href="mailto:seo@codeunion.kz">seo@codeunion.kz</a>
+                </div>
+              </div>
+            </div>
+            <div class="price__items-list">
+              <h5 class="price__items-list-title">
+                Услуги
+              </h5>
+              <div class="price__items-wrapper">
+                <div class="price__card">
+                  <div class="price__card-top">
+                    <div class="price__card-top-num">
+                      01
+                    </div>
+                    <div class="price__card-top-wrapper">
+                      <h4 class="price__card-top__title">
+                        Разработка рекламных кампаний
+                      </h4>
+                      <p class="price__card-top__subtitle">
+                        Яндекс Директ и Google Ads
+                      </p>
+                    </div>
+                  </div>
+                  <div class="price__card-bottom">
+                    <p class="price__card-bottom-price">
+                      25 000₸
+                    </p>
+                    <button class="main-button price__card-bottom-button  popup-btn">
+                      Купить услугу
+                    </button>
+                  </div>
+                </div>
+                <div class="price__card">
+                  <div class="price__card-top">
+                    <div class="price__card-top-num">
+                      02
+                    </div>
+                    <div class="price__card-top-wrapper">
+                      <h4 class="price__card-top__title">
+                        Ведение рекламных кампаний
+                      </h4>
+                    </div>
+                  </div>
+                  <div class="price__card-bottom">
+                    <p class="price__card-bottom-price">
+                      от 50 000₸
+                    </p>
+                    <button class="main-button price__card-bottom-button  popup-btn">
+                      Купить услугу
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
-          <a class="promotion__next" href="#why">
-            <svg class="promotion__next-svg" width="22" viewBox="0 0 22 22" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path class="promotion__next-path promotion__next-arrow"
-                d="M0.578612 11.0002L10.5786 21.0002L20.5786 11.0002" stroke-linecap="round" stroke-linejoin="round" />
-              <path class="promotion__next-path promotion__next-line" d="M10.699 1.00024L10.699 21.0002"
+        </div>
+      </section>
+    </div>
+    <!-- PRICE -->
+
+    <!-- TRUST -->
+    <div class="section">
+      <section class="page-section trust">
+        <div class="container">
+          <h2 class="title trust__title">
+            Нам доверяют
+          </h2>
+          <div class="swiper-container trust__slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img data-src="images/kazpost.webp" alt="kazpost" class="swiper-lazy">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+              </div>
+              <div class="swiper-slide">
+                <img data-src="images/enactus.webp" alt="enactus" class="swiper-lazy">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+              </div>
+              <div class="swiper-slide">
+                <img data-src="images/paypoint.webp" alt="paypoint" class="swiper-lazy">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+              </div>
+              <div class="swiper-slide">
+                <img data-src="images/kazpost.webp" alt="kazpost" class="swiper-lazy">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+              </div>
+              <div class="swiper-slide">
+                <img data-src="images/enactus.webp" alt="enactus" class="swiper-lazy">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+              </div>
+              <div class="swiper-slide">
+                <img data-src="images/paypoint.webp" alt="paypoint" class="swiper-lazy">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+              </div>
+            </div>
+          </div>
+          <a class="trust__prev-link" href="#promotion">
+            <svg class="trust__prev-svg" width="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="trust__prev-path trust__prev-arrow" d="M21.4214 11L11.4214 1L1.42139 11"
                 stroke-linecap="round" stroke-linejoin="round" />
+              <path class="trust__prev-path trust__prev-line" d="M11.301 21L11.301 1" stroke-linecap="round"
+                stroke-linejoin="round" />
             </svg>
           </a>
-        </section>
-        <!-- PROMOTION -->
-      </div>
-
-
-      <!-- WHY -->
-      <div class="section">
-        <section class="page-section promotion why">
-          <div class="container">
-            <h2 class="title promotion__title why__title">
-              Зачем нужно SEO продвижение?
-            </h2>
-            <p class="paragraph promotion__paragraph why__paragraph">
-              SEO продвижение помогает находить ваш сайт потенциальным клиентам и позволяет увеличить трафик до 100%
-            </p>
-            <a class="main-button promotion__button why__button" href="#services">
-              Услуги
-            </a>
-          </div>
-        </section>
-      </div>
-      <!-- WHY -->
-
-
-      <!-- SERVICES -->
-      <div class="section">
-        <video class="section-bg services__bg" loop muted autoplay>
-          <source src="bg-video/11.mp4" type="video/mp4">
-        </video>
-        <section class="page-section services">
-          <div class="container">
-            <h2 class="title services__title">
-              Услуги
-            </h2>
-            <div class="swiper-container services__slider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <h3 class="subtitle services__subtitle">
-                    Разработка рекламных кампаний
-                    <span>Яндекс Директ и Google Ads</span>
-                  </h3>
-                  <ul class="services__list">
-                    <li class="services__list-title">
-                      Разработка рекламных кампаний включает в себя:
-                    </li>
-                    <li class="services__list-item">
-                      Анализ активности ваших конкурентов в контекстной рекламе
-                    </li>
-                    <li class="services__list-item">
-                      Определение бюджета рекламных компаний
-                    </li>
-                    <li class="services__list-item">
-                      Подбор ключевых слов и фраз
-                    </li>
-                    <li class="services__list-item">
-                      Подбор минус слов и фраз
-                    </li>
-                    <li class="services__list-item">
-                      Определение целевой аудитории рекламной кампании
-                    </li>
-                    <li class="services__list-item">
-                      Создание рекламных баннеров и объявлений
-                    </li>
-                  </ul>
-                </div>
-                <div class="swiper-slide">
-                  <h3 class="subtitle services__subtitle">
-                    Ведение рекламных кампаний
-                  </h3>
-                  <ul class="services__list">
-                    <li class="services__list-title">
-                      Ведение рекламных кампаний включает в себя
-                    </li>
-                    <li class="services__list-item">
-                      Анализ активности пользователей на сайте
-                    </li>
-                    <li class="services__list-item">
-                      Определение возрастных категорий посетителей
-                    </li>
-                    <li class="services__list-item">
-                      Определение количества новых посетителей
-                    </li>
-                    <li class="services__list-item">
-                      Определение источника трафика
-                    </li>
-                    <li class="services__list-item">
-                      Определение количества посетителей смомента начала рекламной кампании
-                    </li>
-                    <li class="services__list-item">
-                      Проведение анализа статистики в ходе рекламной кампании, выявление и добавление дополнительных
-                      ключевых,
-                      минус фраз и слов
-                    </li>
-                    <li class="services__list-item">
-                      Предоставление ежемесячного отчета включающего в себя вышеперечисленную статистику
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="swiper-nav-wrapper">
-                <div class="swiper-nav-items">
-                  <div class="swiper-pagination"></div>
-
-                  <div class="swiper-button-prev">
-                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M7 13L1 7L7 1" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </div>
-                  <div class="swiper-button-next">
-                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0.999999 1L7 7L1 13" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </div>
-                </div>
-                <a class="main-button services__button" href="#price">
-                  Цены
-                </a>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-      </div>
-
-      <!-- SERVICES -->
-
-      <!-- PRICE -->
-      <div class="section">
-
-        <section class="page-section price">
-          <div class="container">
-            <h2 class="title price__title">
-              Цены
-            </h2>
-            <div class="price__wrapper">
-              <div class="price__card contacts">
-                <div class="price__card-top contacts__top">
-                  <h4 class="price__card-top__title contacts__title">
-                    Есть вопросы? Позвоните!
-                  </h4>
-                  <p class="price__card-top__subtitle">
-                    и мы обсудим вашу задачу и предложим вам наиболее подходящий вариант!
-                  </p>
-                </div>
-                <div class="price__card-bottom contacts__bottom">
-                  <div class="price__card-bottom__item">
-                    <span>телефон</span>
-                    <a class="price__card-bottom__item-link" href="tel:+77077212959">+7 707 721 29 59</a>
-                  </div>
-                  <div class="price__card-bottom__item">
-                    <span>почта</span>
-                    <a class="price__card-bottom__item-link" href="mailto:seo@codeunion.kz">seo@codeunion.kz</a>
-                  </div>
-                </div>
-              </div>
-              <div class="price__items-list">
-                <h5 class="price__items-list-title">
-                  Услуги
-                </h5>
-                <div class="price__items-wrapper">
-                  <div class="price__card">
-                    <div class="price__card-top">
-                      <div class="price__card-top-num">
-                        01
-                      </div>
-                      <div class="price__card-top-wrapper">
-                        <h4 class="price__card-top__title">
-                          Разработка рекламных кампаний
-                        </h4>
-                        <p class="price__card-top__subtitle">
-                          Яндекс Директ и Google Ads
-                        </p>
-                      </div>
-                    </div>
-                    <div class="price__card-bottom">
-                      <p class="price__card-bottom-price">
-                        25 000₸
-                      </p>
-                      <button class="main-button price__card-bottom-button  popup-btn">
-                        Купить услугу
-                      </button>
-                    </div>
-                  </div>
-                  <div class="price__card">
-                    <div class="price__card-top">
-                      <div class="price__card-top-num">
-                        02
-                      </div>
-                      <div class="price__card-top-wrapper">
-                        <h4 class="price__card-top__title">
-                          Ведение рекламных кампаний
-                        </h4>
-                      </div>
-                    </div>
-                    <div class="price__card-bottom">
-                      <p class="price__card-bottom-price">
-                        от 50 000₸
-                      </p>
-                      <button class="main-button price__card-bottom-button  popup-btn">
-                        Купить услугу
-                      </button>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <!-- PRICE -->
-
-      <!-- TRUST -->
-      <div class="section">
-        <section class="page-section trust">
-          <div class="container">
-            <h2 class="title trust__title">
-              Нам доверяют
-            </h2>
-            <div class="swiper-container trust__slider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img data-src="images/kazpost.webp" alt="kazpost" class="swiper-lazy">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img data-src="images/enactus.webp" alt="enactus" class="swiper-lazy">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img data-src="images/paypoint.webp" alt="paypoint" class="swiper-lazy">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img data-src="images/kazpost.webp" alt="kazpost" class="swiper-lazy">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img data-src="images/enactus.webp" alt="enactus" class="swiper-lazy">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img data-src="images/paypoint.webp" alt="paypoint" class="swiper-lazy">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
-              </div>
-            </div>
-            <a class="trust__prev-link" href="#promotion">
-              <svg class="trust__prev-svg" width="22" viewBox="0 0 22 22" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="trust__prev-path trust__prev-arrow" d="M21.4214 11L11.4214 1L1.42139 11"
-                  stroke-linecap="round" stroke-linejoin="round" />
-                <path class="trust__prev-path trust__prev-line" d="M11.301 21L11.301 1" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </a>
-            <ul class="footer__list trust__list">
-              <li class="footer__item trust__item">
-                телефон
-                <a class="footer__link trust__link" href="tel:+77083153531">+7 708 315 35 31</a>
-              </li>
-              <li class="footer__item trust__item">
-                почта
-                <a class="footer__link trust__link" href="mailto:seoprod.union@gmail.com">seoprod.union@gmail.com</a>
-              </li>
-            </ul>
-          </div>
-        </section>
-      </div>
+          <ul class="footer__list trust__list">
+            <li class="footer__item trust__item">
+              телефон
+              <a class="footer__link trust__link" href="tel:+77083153531">+7 708 315 35 31</a>
+            </li>
+            <li class="footer__item trust__item">
+              почта
+              <a class="footer__link trust__link" href="mailto:seoprod.union@gmail.com">seoprod.union@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </section>
     </div>
+  </div>
   </div>
   <!-- TRUST -->
   <!-- STOP WRITE CODE -->

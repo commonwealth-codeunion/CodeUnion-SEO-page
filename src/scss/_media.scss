@@ -196,7 +196,7 @@
     }
 
     .title {
-        font-size: 50px;
+        font-size: 40px;
     }
 
     .subtitle {
@@ -323,19 +323,7 @@
 
     .price {
         padding: 10vw 0 10vw;
-        &__items-wrapper {
-            flex-wrap: wrap;
-
-        }
-        &__card{
-            margin: 10px 0;
-            width: 70%;
-            min-height: 200px;
-            min-width: auto;
-        }
-        &__card + &__card{
-            margin-left: 0;
-        }
+        
     }
 
     .trust {
@@ -390,7 +378,7 @@
     }
 }
 
-@media(max-width: 767px) {
+@media(max-width: 769px) {
     .promotion {
         text-align: center;
 
@@ -449,7 +437,19 @@
             padding: 10px 10px;
             width: 90%;
         }
+        &__items-wrapper {
+            flex-wrap: wrap;
 
+        }
+        &__card{
+            margin: 10px 0;
+            width: 70%;
+            min-height: 200px;
+            min-width: auto;
+        }
+        &__card + &__card{
+            margin-left: 0;
+        }
         &__card-top {
             &__subtitle {
                 font-size: 18px;
@@ -550,7 +550,7 @@
     }
 
     .title {
-        font-size: 36px;
+        font-size: 30px;
     }
 
     .paragraph {
@@ -621,7 +621,7 @@
 
 @media(max-width: 365px) {
     .title {
-        font-size: 30px;
+        font-size: 26px;
     }
 
     .services {

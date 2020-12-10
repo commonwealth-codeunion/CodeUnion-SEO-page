@@ -27,13 +27,10 @@ checkWidth()
 function checkWidth() {
     if (window.innerWidth <= 1025) {
         sectionBg.forEach(video => {
-            video.remove();
+            const source = video.querySelector('source')
+            source.src = '';
         })
-    } else {
-        servicesBgSource.src = 'bg-video/11.mp4';
-        bgSource.src = 'bg-video/11.mp4';
-        videoHandler(sectionBg, 'play');
-
+        videoHandler(sectionBg, 'pause');
 
     }
 }
@@ -93,17 +90,21 @@ function sendForm() {
 
     let formData = new FormData(form);
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', './mail.php');
+    xhr.open('POST', './phpmailer/feedback.php');
     xhr.addEventListener('load', () => {
         if (Math.floor(xhr.status / 100) !== 2) {
             console.log(`Error. Status code: ${xhr.status}`, xhr);
             return;
         }
+        console.log(xhr);
+        console.log(xhr.response);
         popup.classList.add('success');
         popupWrapper.style.fontSize = '22px'
         popupWrapper.innerHTML = 'Спасибо за заявку! Наш специалист свяжется с вами в течение нескольких минут';
     });
     xhr.addEventListener('error', () => {
+        console.log(xhr);
+        console.log(xhr.response);
         popupWrapper.innerHTML = 'Что-то пошло не так. Пожалуйста, проверьте ваше соединение и попробуйте отправить снова';
 
     });
