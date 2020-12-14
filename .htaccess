@@ -1,3 +1,6 @@
 <FilesMatch "\.(ico|css|woff2|jpg|jpeg|png|webp|js|css|mp4|webm|woff2|eot|woff)$">
     Header set Cache-Control "max-age=31536000, public"
 </FilesMatch>
+<ifModule mod_headers.c>
+    Header set Connection keep-alive
+</ifModule>
